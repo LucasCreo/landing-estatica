@@ -1,5 +1,5 @@
 // ── Theme toggle ─────────────────────────────────────────────
-const THEME_KEY = 'humandocs-landing-theme'
+const THEME_KEY = 'scuadra-landing-theme'
 
 function aplicarTheme(t) {
   const root = document.documentElement
