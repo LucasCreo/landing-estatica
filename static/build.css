@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body {
+  font-family: 'Poppins', ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: oklch(0.985 0.006 85);
+  color: #000;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+html.dark, html.dark body {
+  background-color: oklch(0.19 0.008 260);
+  color: #fff;
+}
+
+* { font-family: inherit; }
+
+.tech-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 30s linear infinite;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.reveal.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tech-track,
+  .animate-blob-drift,
+  .animate-fade-in-up { animation: none !important; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  * { scroll-behavior: auto !important; }
+}
