@@ -26,21 +26,12 @@ if (toggleBtn) {
 }
 
 // ── Logo inject ──────────────────────────────────────────────
-// Reemplaza cada .logo-slot con el SVG del template #tpl-logo,
-// preservando el tamaño definido por el estilo del slot.
+// Reemplaza cada .logo-slot con el logo (img) del template #tpl-logo.
+// El tamaño se toma del estilo del slot (width/height inline).
 const logoTpl = document.getElementById('tpl-logo')
 if (logoTpl) {
   document.querySelectorAll('.logo-slot').forEach(slot => {
-    const clone = logoTpl.content.cloneNode(true)
-    const svg = clone.querySelector('svg')
-    if (svg) {
-      const cs = slot.getAttribute('style') || ''
-      const w = /width\s*:\s*(\d+)px/.exec(cs)?.[1]
-      const h = /height\s*:\s*(\d+)px/.exec(cs)?.[1]
-      if (w) svg.setAttribute('width', w)
-      if (h) svg.setAttribute('height', h)
-    }
-    slot.appendChild(clone)
+    slot.appendChild(logoTpl.content.cloneNode(true))
   })
 }
 
