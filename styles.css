@@ -190,6 +190,17 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 .extra b { display: block; font-weight: 600; font-size: 15.5px; }
 .extra span { display: block; font-size: 14.5px; color: var(--tinta-3); line-height: 1.5; margin-top: 2px; }
 
+/* Alternar listado / organigrama */
+.alternar__botones {
+  display: flex; width: max-content; margin: 16px auto 0; padding: 4px; gap: 4px;
+  border: 1px solid var(--borde); border-radius: 999px; background: var(--superficie);
+}
+.alternar__botones button { padding: 6px 16px; border-radius: 999px; font-size: 14px; font-weight: 500; color: var(--tinta-2); transition: background-color .2s, color .2s; }
+.alternar__botones button:hover { color: var(--tinta); }
+.alternar__botones button[aria-pressed="true"] { background: var(--verde); color: var(--blanco); }
+.alternar img[hidden] { display: none; }
+.alternar img:not([hidden]) { animation: entra .3s ease-out; }
+
 /* Portal del empleado */
 .celulares { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; align-items: start; }
 .celulares .celular { background: #000; }
@@ -203,7 +214,6 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 .garantia > .ic { width: 26px; height: 26px; color: var(--acento); }
 .garantia h3 { margin-top: 16px; font-size: 18px; font-weight: 600; }
 .garantia p { margin-top: 6px; color: var(--tinta-2); font-size: 15.5px; }
-.organigrama { margin-top: 48px; border: 1px solid var(--borde); border-radius: var(--radio); overflow: hidden; background: var(--superficie); }
 
 /* Arranque */
 .arranque { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
@@ -318,8 +328,6 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
   .pestanas button { flex: none; }
   .celulares { grid-template-columns: repeat(4, 72%); }
   .celulares .tel:nth-child(even) { margin-top: 0; }
-  .organigrama { overflow-x: auto; }
-  .organigrama img { min-width: 900px; }
   .cierre__caja { padding: 56px 20px; border-radius: 22px; }
   .hero__ctas .btn { flex: 1 1 100%; }
 }

@@ -209,7 +209,16 @@
           <li><svg class="ic"><use href="#i-check"/></svg>Campos propios de tu empresa</li>
         </ul>
       </div>
-      <figure class="navegador"><img src="capturas/admin-legajos.webp" width="1600" height="1000" alt="Listado de legajos con área, categoría y puesto de cada empleado" /></figure>
+      <div class="alternar">
+        <figure class="navegador">
+          <img src="capturas/admin-legajos.webp" width="1600" height="1000" alt="Listado de legajos con área, categoría y puesto de cada empleado" data-vista="listado" />
+          <img src="capturas/admin-organigrama.webp" width="1600" height="1000" loading="lazy" alt="Organigrama de la empresa de ejemplo, de la dirección a cada equipo" data-vista="organigrama" hidden />
+        </figure>
+        <div class="alternar__botones" role="group" aria-label="Ver legajos como">
+          <button type="button" aria-pressed="true" data-vista="listado">Listado</button>
+          <button type="button" aria-pressed="false" data-vista="organigrama">Organigrama</button>
+        </div>
+      </div>
     </div>
     <div class="modulo" role="tabpanel" id="m-solicitudes" aria-labelledby="t-solicitudes" hidden>
       <div class="modulo__texto">
@@ -301,9 +310,6 @@
       <article class="garantia aparecer"><svg class="ic"><use href="#i-plug"/></svg><h3>API e integraciones</h3><p>Tu sistema de liquidación de sueldos carga legajos y recibos a través de API o carpeta SFTP.</p></article>
       <article class="garantia aparecer"><svg class="ic"><use href="#i-bell"/></svg><h3>Avisos por mail</h3><p>Y en la campanita. Cada persona elige qué avisos quiere recibir.</p></article>
     </div>
-    <figure class="organigrama aparecer">
-      <img src="capturas/admin-organigrama.webp" width="1600" height="297" loading="lazy" alt="Organigrama de la empresa de ejemplo, de la dirección a cada equipo" />
-    </figure>
   </div>
 </section>
 

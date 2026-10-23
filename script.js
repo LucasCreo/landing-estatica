@@ -53,6 +53,15 @@ pestanas.forEach((t, i) => {
   })
 })
 
+// ── Legajos: alternar entre el listado y el organigrama ──
+document.querySelectorAll('.alternar').forEach(caja => {
+  const botones = caja.querySelectorAll('button[data-vista]')
+  botones.forEach(b => b.addEventListener('click', () => {
+    for (const x of botones) x.setAttribute('aria-pressed', String(x === b))
+    for (const img of caja.querySelectorAll('img[data-vista]')) img.hidden = img.dataset.vista !== b.dataset.vista
+  }))
+})
+
 // ── Modo claro / oscuro ──
 // Las capturas tienen su versión oscura en capturas/oscuro/ (la app misma en modo oscuro).
 const botonTema = document.getElementById('tema')
