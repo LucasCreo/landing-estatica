@@ -119,6 +119,14 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 .chip--a { left: -18px; top: 18%; }
 .chip--b { left: 12%; bottom: 0; }
 
+/* Flotado lento del inicio: cada pieza con su ritmo, para que no se muevan juntas.
+   Usa `translate` (no `transform`) para no pisar la perspectiva del navegador. */
+@keyframes flotar { 0%, 100% { translate: 0 0; } 50% { translate: 0 var(--flotar, -12px); } }
+.hero__visual .navegador { animation: flotar 7s ease-in-out infinite; --flotar: -10px; }
+.celular--hero { animation: flotar 5.5s ease-in-out infinite; animation-delay: -2s; --flotar: -18px; }
+.chip--a { animation: flotar 4.5s ease-in-out infinite; animation-delay: -1s; --flotar: -14px; }
+.chip--b { animation: flotar 6s ease-in-out infinite; animation-delay: -3.5s; --flotar: -12px; }
+
 /* ── Marcos ── */
 .navegador {
   background: var(--superficie); border: 1px solid var(--borde); border-radius: 14px; overflow: hidden; box-shadow: var(--sombra-grande);
@@ -336,6 +344,7 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .cinta__pista { animation: none; }
+  .hero__visual .navegador, .celular--hero, .chip { animation: none; }
   .js .aparecer { opacity: 1; transform: none; transition: none; }
   .modulo.entra { animation: none; }
 }
