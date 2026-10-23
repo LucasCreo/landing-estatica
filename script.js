@@ -53,4 +53,26 @@ pestanas.forEach((t, i) => {
   })
 })
 
+// ── Modo claro / oscuro ──
+// Las capturas tienen su versión oscura en capturas/oscuro/ (la app misma en modo oscuro).
+const botonTema = document.getElementById('tema')
+const capturas = [...document.querySelectorAll('img[src^="capturas/"]')]
+capturas.forEach(img => {
+  img.dataset.claro = img.getAttribute('src')
+  // Si falta la versión oscura, queda la clara.
+  img.addEventListener('error', () => { if (img.src.includes('/oscuro/')) img.src = img.dataset.claro })
+})
+function aplicarTema(tema, guardar) {
+  document.documentElement.dataset.tema = tema
+  const oscuro = tema === 'oscuro'
+  for (const img of capturas) img.src = oscuro ? img.dataset.claro.replace('capturas/', 'capturas/oscuro/') : img.dataset.claro
+  const etiqueta = oscuro ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro'
+  botonTema.setAttribute('aria-label', etiqueta)
+  botonTema.title = etiqueta
+  document.querySelector('meta[name="theme-color"]').content = oscuro ? '#171e1a' : '#14532d'
+  if (guardar) try { localStorage.setItem('scuadra-tema', tema) } catch (e) {}
+}
+aplicarTema(document.documentElement.dataset.tema === 'oscuro' ? 'oscuro' : 'claro', false)
+botonTema.addEventListener('click', () => aplicarTema(document.documentElement.dataset.tema === 'oscuro' ? 'claro' : 'oscuro', true))
+
 document.getElementById('anio').textContent = new Date().getFullYear()
