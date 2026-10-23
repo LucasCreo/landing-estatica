@@ -89,7 +89,8 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 .nav.con-borde { border-bottom-color: var(--borde); }
 .nav__fila { display: flex; align-items: center; justify-content: space-between; height: 68px; gap: 16px; }
 .marca { display: inline-flex; align-items: center; gap: 10px; font-weight: 600; font-size: 21px; letter-spacing: -.02em; }
-.marca img { width: 32px; height: 32px; object-fit: contain; }
+.marca img { width: auto; height: 37px; }
+.pie .marca img { height: 28px; }
 .nav__links { display: flex; gap: 28px; font-size: 15px; color: var(--tinta-2); }
 .nav__links a:hover { color: var(--tinta); }
 .nav__acciones { display: flex; align-items: center; gap: 6px; }
@@ -314,7 +315,7 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
   .nav__acciones .btn--primario { padding: .5em .9em; font-size: 13.5px; }
   .nav__fila { gap: 8px; }
   .marca { font-size: 19px; gap: 8px; }
-  .marca img { width: 28px; height: 28px; }
+  .marca img { height: 30px; }
   .nav__acciones { gap: 2px; }
   .tema, .nav__menu { width: 36px; height: 36px; }
   .franja { font-size: 13px; }
