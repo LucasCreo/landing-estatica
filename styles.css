@@ -217,6 +217,18 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 .celulares figcaption { text-align: center; margin-top: 16px; font-size: 15px; color: rgb(255 255 255 / .8); }
 .celulares .celular { padding: 7px; }
 
+/* Asistente */
+.asistente { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); gap: 64px; align-items: center; max-width: 980px; margin: 0 auto; }
+.asistente .tel { max-width: 320px; justify-self: center; }
+.consultas { display: grid; gap: 18px; }
+.consultas li { padding: 18px 20px; border-radius: var(--radio); background: var(--crema); border: 1px solid var(--borde); }
+.consultas p { color: var(--tinta-2); font-size: 15.5px; }
+.consultas__pregunta { color: var(--tinta) !important; font-weight: 600; font-size: 17px !important; margin-bottom: 4px; }
+.entrena { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 56px; align-items: center; margin-top: 96px; }
+.entrena h3 { display: flex; align-items: center; gap: 10px; font-size: 24px; font-weight: 600; letter-spacing: -.02em; }
+.entrena h3 .ic { color: var(--acento); width: 26px; height: 26px; }
+.entrena__texto > p { margin-top: 12px; color: var(--tinta-2); }
+
 /* Seguridad */
 .garantias { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 .garantia { padding: 28px; border-radius: var(--radio); background: var(--superficie); border: 1px solid var(--borde); }
@@ -307,6 +319,8 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
   .hero__ctas, .hero__garantias { justify-content: center; }
   .hero__visual .navegador { transform: none; margin-right: 0; }
   .extras { grid-template-columns: repeat(2, 1fr); }
+  .asistente, .entrena { grid-template-columns: 1fr; gap: 40px; }
+  .entrena { margin-top: 72px; }
   .garantias { grid-template-columns: repeat(2, 1fr); }
   .celulares { grid-template-columns: repeat(4, 220px); overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 12px; margin-inline: -20px; padding-inline: 20px; }
   .celulares .tel { scroll-snap-align: center; }

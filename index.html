@@ -51,6 +51,7 @@
   <symbol id="i-chat" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></symbol>
   <symbol id="i-sol" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></symbol>
   <symbol id="i-luna" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></symbol>
+  <symbol id="i-bot" viewBox="0 0 24 24"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2M20 14h2M15 13v2M9 13v2"/></symbol>
   <symbol id="i-mail" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
 </svg>
 
@@ -71,6 +72,7 @@
       <a href="#recibos">Recibos</a>
       <a href="#modulos">Módulos</a>
       <a href="#empleados">Para tu equipo</a>
+      <a href="#asistente">Asistente</a>
       <a href="#seguridad">Seguridad</a>
       <a href="#preguntas">Preguntas</a>
     </nav>
@@ -124,8 +126,8 @@
 <!-- ══ CINTA DE FUNCIONES ══ -->
 <div class="cinta" aria-label="Funciones">
   <div class="cinta__pista">
-    <span>Recibos con firma electrónica</span><span>Legajos digitales</span><span>Organigrama</span><span>Solicitudes con aprobación</span><span>Licencias y vacaciones</span><span>Fichaje desde el celular</span><span>Banco de horas</span><span>Calendario del equipo</span><span>Avisos internos</span><span>Onboarding</span><span>Capacitaciones</span><span>Evaluaciones de desempeño</span><span>Vencimientos de documentos</span><span>API e integraciones</span>
-    <span aria-hidden="true">Recibos con firma electrónica</span><span aria-hidden="true">Legajos digitales</span><span aria-hidden="true">Organigrama</span><span aria-hidden="true">Solicitudes con aprobación</span><span aria-hidden="true">Licencias y vacaciones</span><span aria-hidden="true">Fichaje desde el celular</span><span aria-hidden="true">Banco de horas</span><span aria-hidden="true">Calendario del equipo</span><span aria-hidden="true">Avisos internos</span><span aria-hidden="true">Onboarding</span><span aria-hidden="true">Capacitaciones</span><span aria-hidden="true">Evaluaciones de desempeño</span><span aria-hidden="true">Vencimientos de documentos</span><span aria-hidden="true">API e integraciones</span>
+    <span>Recibos con firma electrónica</span><span>Legajos digitales</span><span>Organigrama</span><span>Solicitudes con aprobación</span><span>Licencias y vacaciones</span><span>Fichaje desde el celular</span><span>Banco de horas</span><span>Calendario del equipo</span><span>Asistente con inteligencia artificial</span><span>Avisos internos</span><span>Onboarding</span><span>Capacitaciones</span><span>Evaluaciones de desempeño</span><span>Vencimientos de documentos</span><span>API e integraciones</span>
+    <span aria-hidden="true">Recibos con firma electrónica</span><span aria-hidden="true">Legajos digitales</span><span aria-hidden="true">Organigrama</span><span aria-hidden="true">Solicitudes con aprobación</span><span aria-hidden="true">Licencias y vacaciones</span><span aria-hidden="true">Fichaje desde el celular</span><span aria-hidden="true">Banco de horas</span><span aria-hidden="true">Calendario del equipo</span><span aria-hidden="true">Asistente con inteligencia artificial</span><span aria-hidden="true">Avisos internos</span><span aria-hidden="true">Onboarding</span><span aria-hidden="true">Capacitaciones</span><span aria-hidden="true">Evaluaciones de desempeño</span><span aria-hidden="true">Vencimientos de documentos</span><span aria-hidden="true">API e integraciones</span>
   </div>
 </div>
 
@@ -295,6 +297,60 @@
   </div>
 </section>
 
+<!-- ══ ASISTENTE ══ -->
+<section class="seccion seccion--clara" id="asistente">
+  <div class="contenedor">
+    <div class="encabezado aparecer">
+      <p class="etiqueta">Asistente con inteligencia artificial</p>
+      <h2>Las dudas de tu equipo, respondidas al instante</h2>
+      <p>Un asistente dentro del portal que contesta a cualquier hora con la información de tu empresa y los datos de quien pregunta. Menos mails y llamadas a RRHH.</p>
+    </div>
+
+    <div class="asistente">
+      <figure class="tel aparecer">
+        <div class="celular"><img src="capturas/empleado-asistente.webp" width="780" height="1688" loading="lazy" alt="Chat del asistente: responde cuántos días de vacaciones le quedan, si firmó el recibo y qué dice la política de uso de vehículos" /></div>
+      </figure>
+      <div class="asistente__texto aparecer">
+        <ul class="consultas">
+          <li>
+            <p class="consultas__pregunta">“¿Cuántos días de vacaciones me quedan?”</p>
+            <p>Responde con su saldo del año y le indica cómo pedirlos.</p>
+          </li>
+          <li>
+            <p class="consultas__pregunta">“¿Ya firmé el recibo de octubre?”</p>
+            <p>Sabe el estado de sus recibos y documentos, sin mostrar importes.</p>
+          </li>
+          <li>
+            <p class="consultas__pregunta">“¿Puedo usar la camioneta el sábado?”</p>
+            <p>Busca la respuesta en las políticas de tu empresa y nombra a su jefe directo.</p>
+          </li>
+        </ul>
+        <ul class="tildes">
+          <li><svg class="ic"><use href="#i-check"/></svg>Cada empleado consulta solo sus propios datos</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>Si no sabe algo, deriva a Recursos Humanos</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>Desde el celular o la computadora, sin instalar nada</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="entrena">
+      <div class="entrena__texto aparecer">
+        <h3><svg class="ic"><use href="#i-bot"/></svg>RRHH lo entrena con lo propio de tu empresa</h3>
+        <p>Quien administra Scuadra le enseña cómo trabajan: le carga el reglamento, las políticas y las preguntas frecuentes, y le da indicaciones sobre el tono y a quién derivar. El asistente responde en base a eso.</p>
+        <ul class="tildes">
+          <li><svg class="ic"><use href="#i-check"/></svg>Documentos de la empresa que lee en cada consulta</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>Elegís qué datos del empleado puede usar para responder</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>Claude, OpenAI, Gemini o un modelo propio, con límite de consultas por día</li>
+        </ul>
+      </div>
+      <figure class="navegador aparecer">
+        <div class="navegador__barra"><i></i><i></i><i></i><span>Configuración › Asistente virtual</span></div>
+        <img src="capturas/admin-asistente.webp" width="1600" height="1028" loading="lazy" alt="Configuración del asistente: indicaciones de la empresa, datos del empleado que puede consultar y documentos cargados" />
+      </figure>
+    </div>
+  </div>
+</section>
+
 <!-- ══ SEGURIDAD E INTEGRACIONES ══ -->
 <section class="seccion" id="seguridad">
   <div class="contenedor">
@@ -304,7 +360,7 @@
     </div>
     <div class="garantias">
       <article class="garantia aparecer"><svg class="ic"><use href="#i-shield"/></svg><h3>Permisos por rol</h3><p>Definís qué puede hacer cada administrador: recibos, legajos, solicitudes, horarios.</p></article>
-      <article class="garantia aparecer"><svg class="ic"><use href="#i-git"/></svg><h3>Alcance por organigrama</h3><p>Cada jefe ve y aprueba solo lo de su equipo.</p></article>
+      <article class="garantia aparecer"><svg class="ic"><use href="#i-git"/></svg><h3>Alcance por organigrama</h3><p>Cada jefe ve y aprueba solo lo de su equipo, y el asistente responde solo con los datos de quien le pregunta.</p></article>
       <article class="garantia aparecer"><svg class="ic"><use href="#i-history"/></svg><h3>Auditoría completa</h3><p>Queda registrado quién hizo qué y cuándo: cada firma, aprobación y cambio.</p></article>
       <article class="garantia aparecer"><svg class="ic"><use href="#i-pen"/></svg><h3>Firma electrónica</h3><p>Con la contraseña personal del empleado, con firma ológrafa y hasta con evidencias biométricas que confirman la identidad.</p></article>
       <article class="garantia aparecer"><svg class="ic"><use href="#i-plug"/></svg><h3>API e integraciones</h3><p>Tu sistema de liquidación de sueldos carga legajos y recibos a través de API o carpeta SFTP.</p></article>
@@ -343,6 +399,8 @@
       <details><summary>¿Qué pasa si un empleado no firma a tiempo?</summary><p>Le llega un recordatorio antes del plazo y otro aviso cuando vence. Desde el lote ves quién falta y le podés reenviar el aviso con un plazo nuevo.</p></details>
       <details><summary>¿Quién ve los datos de cada empleado?</summary><p>Cada administrador ve solo los módulos que le habilitás y, si tiene un equipo a cargo, solo a su equipo. Todo lo que se hace queda en la auditoría.</p></details>
       <details><summary>¿Puedo cargar mis legajos de una vez?</summary><p>Sí. Importás un Excel con los datos y el nombre de usuario de cada persona. Scuadra valida que no haya repetidos y envía las invitaciones.</p></details>
+      <details><summary>¿El asistente puede ver datos de otros empleados?</summary><p>No. Responde solo con los datos de la persona que le escribe y con los documentos que cargó la empresa. RRHH elige qué temas puede consultar: vacaciones, recibos, horarios, solicitudes y más.</p></details>
+      <details><summary>¿Qué inteligencia artificial usa el asistente?</summary><p>La que elija tu empresa: Claude, OpenAI, Gemini o un modelo propio. Se define un límite de consultas por empleado por día para controlar el costo.</p></details>
       <details><summary>¿Sirve para empleados que no están en una oficina?</summary><p>Sí. Choferes, operarios o equipos en la calle fichan, firman y piden días desde el celular.</p></details>
     </div>
   </div>
