@@ -51,6 +51,13 @@
   <symbol id="i-chat" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></symbol>
   <symbol id="i-sol" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></symbol>
   <symbol id="i-luna" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></symbol>
+  <symbol id="i-file" viewBox="0 0 24 24"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4M10 9H8M16 13H8M16 17H8"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="M11.53 2.3a.53.53 0 0 1 .94 0l2.31 4.68a2.12 2.12 0 0 0 1.6 1.16l5.16.76a.53.53 0 0 1 .29.9l-3.73 3.64a2.12 2.12 0 0 0-.61 1.88l.88 5.14a.53.53 0 0 1-.77.56l-4.62-2.43a2.12 2.12 0 0 0-1.97 0L6.4 21.01a.53.53 0 0 1-.77-.56l.88-5.13a2.12 2.12 0 0 0-.61-1.88L2.16 9.8a.53.53 0 0 1 .29-.9l5.16-.76a2.12 2.12 0 0 0 1.6-1.16z"/></symbol>
+  <symbol id="i-grad" viewBox="0 0 24 24"><path d="M21.42 10.92a1 1 0 0 0-.02-1.84L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.83l8.57 3.91a2 2 0 0 0 1.66 0zM22 10v6M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></symbol>
+  <symbol id="i-rocket" viewBox="0 0 24 24"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09zM12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2zM9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></symbol>
+  <symbol id="i-sliders" viewBox="0 0 24 24"><path d="M21 4h-7M10 4H3M21 12h-9M8 12H3M21 20h-5M12 20H3M14 2v4M8 10v4M16 18v4"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 4.99-5.54 10.19-7.4 11.8a1 1 0 0 1-1.2 0C9.54 20.19 4 14.99 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-tel" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
   <symbol id="i-bot" viewBox="0 0 24 24"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2M20 14h2M15 13v2M9 13v2"/></symbol>
   <symbol id="i-mail" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
 </svg>
@@ -135,22 +142,38 @@
 <section class="seccion">
   <div class="contenedor">
     <div class="encabezado aparecer">
-      <p class="etiqueta">Lo que pasa hoy</p>
+      <p class="etiqueta">Lo que cambia</p>
       <h2>RRHH no debería ser perseguir papeles</h2>
     </div>
-    <div class="dolores">
-      <article class="dolor aparecer">
-        <p class="dolor__antes">Recibos impresos que hay que repartir, firmar y archivar.</p>
-        <p class="dolor__despues"><svg class="ic"><use href="#i-arrow"/></svg>Se firman desde el celular y quedan guardados.</p>
-      </article>
-      <article class="dolor aparecer">
-        <p class="dolor__antes">Pedidos por WhatsApp y mail que nadie sabe si se aprobaron.</p>
-        <p class="dolor__despues"><svg class="ic"><use href="#i-arrow"/></svg>Cada pedido tiene su estado y su aprobador.</p>
-      </article>
-      <article class="dolor aparecer">
-        <p class="dolor__antes">Planillas de horario y vacaciones que nadie actualiza.</p>
-        <p class="dolor__despues"><svg class="ic"><use href="#i-arrow"/></svg>Fichaje, saldos y ausencias al día.</p>
-      </article>
+    <div class="comparacion aparecer" role="table" aria-label="Hoy y con Scuadra">
+      <div class="comparacion__fila comparacion__cabecera" role="row">
+        <span role="columnheader">Hoy</span>
+        <span role="columnheader"><img src="logo.svg" alt="" width="36" height="22" /> Con Scuadra</span>
+      </div>
+      <div class="comparacion__fila" role="row">
+        <span role="cell">Los recibos se imprimen, se reparten uno por uno y se archivan en cajas.</span>
+        <span role="cell">Se cargan en lote, se asignan solos por legajo y se firman desde el celular.</span>
+      </div>
+      <div class="comparacion__fila" role="row">
+        <span role="cell">Para saber quién firmó hay que revisar una planilla.</span>
+        <span role="cell">El avance de cada lote se ve en el momento, y el aviso le llega solo a quien falta.</span>
+      </div>
+      <div class="comparacion__fila" role="row">
+        <span role="cell">Los pedidos llegan por WhatsApp, por mail o en el pasillo.</span>
+        <span role="cell">Cada solicitud tiene su formulario, su circuito de aprobación y su estado a la vista.</span>
+      </div>
+      <div class="comparacion__fila" role="row">
+        <span role="cell">La documentación de cada persona vive en carpetas y cajones.</span>
+        <span role="cell">Todo queda en su legajo digital, con permisos y registro de quién hizo qué.</span>
+      </div>
+      <div class="comparacion__fila" role="row">
+        <span role="cell">Las vacaciones, las horas y las llegadas tarde se cuentan a mano.</span>
+        <span role="cell">Saldos, fichajes y horas extra se calculan solos, y la planilla del mes se arma sola.</span>
+      </div>
+      <div class="comparacion__fila" role="row">
+        <span role="cell">Las mismas preguntas de siempre llenan la casilla de RRHH.</span>
+        <span role="cell">El asistente las responde al instante con la información de la empresa.</span>
+      </div>
     </div>
   </div>
 </section>
@@ -195,10 +218,14 @@
 
     <div class="pestanas aparecer" role="tablist" aria-label="Módulos">
       <button role="tab" aria-selected="true" aria-controls="m-legajos" id="t-legajos"><svg class="ic"><use href="#i-users"/></svg>Legajos</button>
+      <button role="tab" aria-selected="false" aria-controls="m-documentos" id="t-documentos" tabindex="-1"><svg class="ic"><use href="#i-file"/></svg>Documentos</button>
       <button role="tab" aria-selected="false" aria-controls="m-solicitudes" id="t-solicitudes" tabindex="-1"><svg class="ic"><use href="#i-clipboard"/></svg>Solicitudes</button>
       <button role="tab" aria-selected="false" aria-controls="m-licencias" id="t-licencias" tabindex="-1"><svg class="ic"><use href="#i-plane"/></svg>Licencias</button>
       <button role="tab" aria-selected="false" aria-controls="m-horarios" id="t-horarios" tabindex="-1"><svg class="ic"><use href="#i-clock"/></svg>Horarios</button>
       <button role="tab" aria-selected="false" aria-controls="m-calendario" id="t-calendario" tabindex="-1"><svg class="ic"><use href="#i-calendar"/></svg>Calendario</button>
+      <button role="tab" aria-selected="false" aria-controls="m-evaluaciones" id="t-evaluaciones" tabindex="-1"><svg class="ic"><use href="#i-star"/></svg>Evaluaciones</button>
+      <button role="tab" aria-selected="false" aria-controls="m-capacitaciones" id="t-capacitaciones" tabindex="-1"><svg class="ic"><use href="#i-grad"/></svg>Capacitaciones</button>
+      <button role="tab" aria-selected="false" aria-controls="m-onboarding" id="t-onboarding" tabindex="-1"><svg class="ic"><use href="#i-rocket"/></svg>Onboarding</button>
     </div>
 
     <div class="modulo aparecer" role="tabpanel" id="m-legajos" aria-labelledby="t-legajos">
@@ -207,8 +234,9 @@
         <p>La ficha completa de cada persona, con sus documentos, recibos y su lugar en el organigrama.</p>
         <ul class="tildes">
           <li><svg class="ic"><use href="#i-check"/></svg>Alta individual o masiva importando desde un Excel</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>Exportación a Excel con los filtros que tengas aplicados</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>Campos personalizados: obra social, contacto de emergencia, talle de uniforme o lo que necesites</li>
           <li><svg class="ic"><use href="#i-check"/></svg>Cada empleado recibe una invitación y elige su contraseña</li>
-          <li><svg class="ic"><use href="#i-check"/></svg>Campos propios de tu empresa</li>
         </ul>
       </div>
       <div class="alternar">
@@ -221,6 +249,18 @@
           <button type="button" aria-pressed="false" data-vista="organigrama">Organigrama</button>
         </div>
       </div>
+    </div>
+    <div class="modulo" role="tabpanel" id="m-documentos" aria-labelledby="t-documentos" hidden>
+      <div class="modulo__texto">
+        <h3>Documentos con firma y seguimiento</h3>
+        <p>Políticas, aptos médicos, contratos o cualquier documento, para una persona, un área o toda la empresa. Ves en una sola pantalla quién lo leyó, quién lo firmó y quién falta.</p>
+        <ul class="tildes">
+          <li><svg class="ic"><use href="#i-check"/></svg>Cada tipo de documento define qué se le pide al empleado: firma, lectura o solo publicarlo</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>Envío individual o masivo, con plazo y aviso por mail</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>Vencimientos con aviso previo, ideal para aptos médicos y licencias de conducir</li>
+        </ul>
+      </div>
+      <figure class="navegador"><img src="capturas/admin-documento-detalle.webp" width="1600" height="1000" loading="lazy" alt="Detalle de un documento enviado: cinco de ocho empleados ya lo leyeron y tres están pendientes" /></figure>
     </div>
     <div class="modulo" role="tabpanel" id="m-solicitudes" aria-labelledby="t-solicitudes" hidden>
       <div class="modulo__texto">
@@ -271,11 +311,47 @@
       <figure class="navegador"><img src="capturas/admin-calendario.webp" width="1600" height="1000" loading="lazy" alt="Calendario del mes con feriados, capacitaciones y eventos de la empresa" /></figure>
     </div>
 
+    <div class="modulo" role="tabpanel" id="m-evaluaciones" aria-labelledby="t-evaluaciones" hidden>
+      <div class="modulo__texto">
+        <h3>Evaluaciones de desempeño</h3>
+        <p>Armás rondas de evaluación con tus propios criterios y seguís el avance de cada persona desde un solo lugar.</p>
+        <ul class="tildes">
+          <li><svg class="ic"><use href="#i-check"/></svg>Plantillas con criterios a medida: escala, porcentaje, sí o no, texto o selección</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>Rondas por período, para todo el equipo o para algunas personas</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>Cada empleado ve sus resultados en su portal</li>
+        </ul>
+      </div>
+      <figure class="navegador"><img src="capturas/admin-evaluaciones.webp" width="1600" height="1000" loading="lazy" alt="Ronda de evaluación de desempeño con los resultados de cada empleado por criterio" /></figure>
+    </div>
+    <div class="modulo" role="tabpanel" id="m-capacitaciones" aria-labelledby="t-capacitaciones" hidden>
+      <div class="modulo__texto">
+        <h3>Capacitaciones a medida</h3>
+        <p>Cursos con módulos de video, lecturas, archivos y cuestionarios, asignados por área o por persona, con fecha límite.</p>
+        <ul class="tildes">
+          <li><svg class="ic"><use href="#i-check"/></svg>Cuestionarios con nota mínima e intentos</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>Progreso de cada persona y del curso completo</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>Los empleados pueden dejar preguntas y RRHH las responde</li>
+        </ul>
+      </div>
+      <figure class="navegador"><img src="capturas/admin-capacitaciones.webp" width="1600" height="1000" loading="lazy" alt="Progreso de una capacitación: avance de cada empleado, lecciones completadas y última actividad" /></figure>
+    </div>
+    <div class="modulo" role="tabpanel" id="m-onboarding" aria-labelledby="t-onboarding" hidden>
+      <div class="modulo__texto">
+        <h3>Onboarding de cada ingreso</h3>
+        <p>La primera semana de cada persona, paso por paso: lo que tiene que leer, completar, adjuntar o firmar, y quién lo revisa.</p>
+        <ul class="tildes">
+          <li><svg class="ic"><use href="#i-check"/></svg>Plantillas que se asignan solas a cada ingreso según su área</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>Pasos con formularios, documentación, firmas y capacitaciones</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>RRHH revisa lo que se adjunta y sigue el avance de cada uno</li>
+        </ul>
+      </div>
+      <figure class="navegador"><img src="capturas/admin-onboarding.webp" width="1600" height="1000" loading="lazy" alt="Onboarding en curso de tres ingresos, con su avance y el paso en el que están" /></figure>
+    </div>
     <div class="extras aparecer">
       <div class="extra"><svg class="ic"><use href="#i-megaphone"/></svg><div><b>Avisos internos</b><span>Comunicados con fijado, reacciones y comentarios.</span></div></div>
       <div class="extra"><svg class="ic"><use href="#i-sheet"/></svg><div><b>Vencimientos</b><span>Aptos médicos y documentos que vencen, con aviso previo.</span></div></div>
-      <div class="extra"><svg class="ic"><use href="#i-git"/></svg><div><b>Onboarding</b><span>La primera semana de cada ingreso, paso por paso.</span></div></div>
-      <div class="extra"><svg class="ic"><use href="#i-pen"/></svg><div><b>Capacitaciones y evaluaciones</b><span>Cursos con cuestionario y rondas de desempeño.</span></div></div>
+      <div class="extra"><svg class="ic"><use href="#i-plane"/></svg><div><b>Fuera de oficina</b><span>Si alguien no está, sus aprobaciones pasan a su jefe.</span></div></div>
+      <div class="extra"><svg class="ic"><use href="#i-bell"/></svg><div><b>Pendientes a la vista</b><span>Cada responsable ve lo que le falta aprobar o revisar.</span></div></div>
     </div>
   </div>
 </section>
@@ -351,6 +427,38 @@
   </div>
 </section>
 
+<!-- ══ PERSONALIZABLE ══ -->
+<section class="seccion" id="personalizable">
+  <div class="contenedor">
+    <div class="encabezado aparecer">
+      <p class="etiqueta">Se adapta a tu empresa</p>
+      <h2>Tu forma de trabajar, sin programar nada</h2>
+      <p>Cada empresa es distinta. Scuadra se configura desde pantallas, sin pedir desarrollos ni esperar meses: lo ajustás vos y lo usás al día siguiente.</p>
+    </div>
+    <div class="adapta">
+      <div class="adapta__lista">
+        <article class="adapta__item aparecer"><svg class="ic"><use href="#i-users"/></svg><div><h3>Un legajo a tu medida</h3><p>Elegís qué datos se ven y cuáles son obligatorios, y sumás los campos propios que necesites.</p></div></article>
+        <article class="adapta__item aparecer"><svg class="ic"><use href="#i-file"/></svg><div><h3>Tus documentos, tus reglas</h3><p>Cada tipo de documento dice si se firma, se lee o solo se publica, y si vence.</p></div></article>
+        <article class="adapta__item aparecer"><svg class="ic"><use href="#i-clipboard"/></svg><div><h3>Solicitudes y formularios propios</h3><p>Armás los campos y los pasos de aprobación de cada trámite.</p></div></article>
+        <article class="adapta__item aparecer"><svg class="ic"><use href="#i-clock"/></svg><div><h3>Licencias, horarios y turnos</h3><p>Tus tipos de licencia, horarios por área y turnos rotativos.</p></div></article>
+        <article class="adapta__item aparecer"><svg class="ic"><use href="#i-mail"/></svg><div><h3>Mails con la voz de tu empresa</h3><p>Editás el asunto, el texto y el botón de cada aviso que llega a tu equipo.</p></div></article>
+        <article class="adapta__item aparecer"><svg class="ic"><use href="#i-sliders"/></svg><div><h3>Cada uno ve lo suyo</h3><p>Módulos y permisos por persona: cada usuario entra solo a lo que le corresponde.</p></div></article>
+      </div>
+      <div class="alternar aparecer">
+        <figure class="navegador">
+          <div class="navegador__barra"><i></i><i></i><i></i><span>Configuración</span></div>
+          <img src="capturas/admin-config-legajos.webp" width="1600" height="1000" loading="lazy" alt="Configuración de los campos del legajo y de los campos personalizados" data-vista="legajo" />
+          <img src="capturas/admin-config-emails.webp" width="1600" height="1000" loading="lazy" alt="Edición de una plantilla de mail con sus variables, asunto, cuerpo y texto del botón" data-vista="mails" hidden />
+        </figure>
+        <div class="alternar__botones" role="group" aria-label="Ver configuración de">
+          <button type="button" aria-pressed="true" data-vista="legajo">Campos del legajo</button>
+          <button type="button" aria-pressed="false" data-vista="mails">Plantillas de mail</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ══ SEGURIDAD E INTEGRACIONES ══ -->
 <section class="seccion" id="seguridad">
   <div class="contenedor">
@@ -412,20 +520,28 @@
     <h2>Probalo con tu equipo</h2>
     <p>Te mostramos Scuadra con tus propios procesos y te ayudamos a cargar tu primer lote de recibos.</p>
     <div class="hero__ctas">
-      <!-- TODO: número de WhatsApp y mail de contacto reales -->
-      <a href="mailto:hola@scuadra.com.ar?subject=Quiero%20una%20demo%20de%20Scuadra" class="btn btn--claro btn--grande"><svg class="ic"><use href="#i-mail"/></svg>Pedir una demo</a>
-      <a href="https://wa.me/5491100000000" class="btn btn--borde-claro btn--grande" rel="noopener"><svg class="ic"><use href="#i-chat"/></svg>Escribinos por WhatsApp</a>
+      <a href="mailto:info@grupolpa.com?subject=Quiero%20una%20demo%20de%20Scuadra" class="btn btn--claro btn--grande"><svg class="ic"><use href="#i-mail"/></svg>Pedir una demo</a>
+      <a href="tel:+541152798000" class="btn btn--borde-claro btn--grande"><svg class="ic"><use href="#i-tel"/></svg>+54 11 5279-8000</a>
     </div>
+    <p class="cierre__mail">O escribinos a <a href="mailto:info@grupolpa.com">info@grupolpa.com</a></p>
   </div>
 </section>
 
 </main>
 
 <footer class="pie">
-  <div class="contenedor pie__fila">
-    <a href="#" class="marca"><img src="logo.svg" alt="" width="46" height="28" /><span>Scuadra</span></a>
-    <p>Gestión de recursos humanos · Hecho en Argentina</p>
-    <p>© <span id="anio">2026</span> Scuadra</p>
+  <div class="contenedor pie__grilla">
+    <div class="pie__marca">
+      <a href="#" class="marca"><img src="logo.svg" alt="" width="46" height="28" /><span>Scuadra</span></a>
+      <p>Gestión de recursos humanos, de <b>Grupo LPA</b>.</p>
+    </div>
+    <ul class="pie__contacto">
+      <li><svg class="ic"><use href="#i-pin"/></svg>Congreso 2171 10º B · CP 1428 · CABA · Argentina</li>
+      <li><svg class="ic"><use href="#i-tel"/></svg><a href="tel:+541152798000">+54 11 5279-8000</a></li>
+      <li><svg class="ic"><use href="#i-mail"/></svg><a href="mailto:info@grupolpa.com">info@grupolpa.com</a></li>
+    </ul>
+    <p class="pie__paises">Argentina · Colombia · Ecuador · Perú · Chile · Barbados</p>
+    <p class="pie__copy">© <span id="anio">2026</span> Grupo LPA</p>
   </div>
 </footer>
 
