@@ -85,3 +85,35 @@ aplicarTema(document.documentElement.dataset.tema === 'oscuro' ? 'oscuro' : 'cla
 botonTema.addEventListener('click', () => aplicarTema(document.documentElement.dataset.tema === 'oscuro' ? 'claro' : 'oscuro', true))
 
 document.getElementById('anio').textContent = new Date().getFullYear()
+
+// Formulario de contacto: los campos aparecen al elegir el motivo y al enviar se abre
+// el correo del visitante con todo precargado (la landing no tiene servidor).
+const formContacto = document.getElementById('form-contacto')
+if (formContacto) {
+  const campos = formContacto.querySelector('.contacto__campos')
+  formContacto.addEventListener('change', e => {
+    if (e.target.name === 'motivo') campos.hidden = false
+    if (e.target.classList) e.target.classList.remove('invalido')
+  })
+  formContacto.addEventListener('submit', e => {
+    e.preventDefault()
+    const d = new FormData(formContacto)
+    let primero = null
+    for (const el of formContacto.querySelectorAll('[required]')) {
+      const ok = el.checkValidity() && el.value.trim() !== ''
+      el.classList.toggle('invalido', !ok)
+      if (!ok && !primero) primero = el
+    }
+    if (primero) { primero.focus(); return }
+    const motivo = d.get('motivo') || 'Consulta'
+    const cuerpo = [
+      `Motivo: ${motivo}`,
+      `Nombre: ${d.get('nombre').trim()}`,
+      `Email: ${d.get('email').trim()}`,
+      d.get('empresa').trim() && `Empresa: ${d.get('empresa').trim()}`,
+      d.get('mensaje').trim() && `\n${d.get('mensaje').trim()}`,
+    ].filter(Boolean).join('\n')
+    const asunto = `${motivo} · Scuadra${d.get('empresa').trim() ? ` · ${d.get('empresa').trim()}` : ''}`
+    location.href = `mailto:info@grupolpa.com?subject=${encodeURIComponent(asunto)}&body=${encodeURIComponent(cuerpo)}`
+  })
+}

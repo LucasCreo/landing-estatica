@@ -516,14 +516,36 @@
 
 <!-- ══ CIERRE ══ -->
 <section class="cierre" id="contacto">
-  <div class="contenedor cierre__caja aparecer">
-    <h2>Probalo con tu equipo</h2>
-    <p>Te mostramos Scuadra con tus propios procesos y te ayudamos a cargar tu primer lote de recibos.</p>
-    <div class="hero__ctas">
-      <a href="mailto:info@grupolpa.com?subject=Quiero%20una%20demo%20de%20Scuadra" class="btn btn--claro btn--grande"><svg class="ic"><use href="#i-mail"/></svg>Pedir una demo</a>
-      <a href="tel:+541152798000" class="btn btn--borde-claro btn--grande"><svg class="ic"><use href="#i-tel"/></svg>+54 11 5279-8000</a>
+  <div class="contenedor cierre__caja cierre__caja--form aparecer">
+    <div class="cierre__texto">
+      <h2>Probalo con tu equipo</h2>
+      <p>Te mostramos Scuadra con tus propios procesos y te ayudamos a cargar tu primer lote de recibos.</p>
+      <ul class="cierre__sellos">
+        <li><svg class="ic"><use href="#i-check"/></svg>Sin compromiso</li>
+        <li><svg class="ic"><use href="#i-check"/></svg>Respuesta en 24 h</li>
+        <li><svg class="ic"><use href="#i-check"/></svg>Demo personalizada</li>
+      </ul>
+      <p class="cierre__mail"><a href="tel:+541152798000">+54 11 5279-8000</a> · <a href="mailto:info@grupolpa.com">info@grupolpa.com</a></p>
     </div>
-    <p class="cierre__mail">O escribinos a <a href="mailto:info@grupolpa.com">info@grupolpa.com</a></p>
+    <form class="contacto" id="form-contacto" novalidate>
+      <fieldset class="contacto__motivos">
+        <legend>¿Cuál es el motivo de tu consulta?</legend>
+        <label><input type="radio" name="motivo" value="Quiero una demo" /><span>Quiero una demo</span></label>
+        <label><input type="radio" name="motivo" value="Quiero más información" /><span>Quiero más información</span></label>
+        <label><input type="radio" name="motivo" value="Quiero contratar" /><span>Quiero contratar</span></label>
+        <label><input type="radio" name="motivo" value="Otro" /><span>Otro</span></label>
+      </fieldset>
+      <div class="contacto__campos" hidden>
+        <div class="contacto__fila">
+          <input name="nombre" placeholder="Nombre completo" autocomplete="name" required aria-label="Nombre completo" />
+          <input name="email" type="email" placeholder="Email corporativo" autocomplete="email" required aria-label="Email corporativo" />
+        </div>
+        <input name="empresa" placeholder="Empresa" autocomplete="organization" aria-label="Empresa" />
+        <textarea name="mensaje" rows="4" placeholder="¿En qué podemos ayudarte?" aria-label="¿En qué podemos ayudarte?"></textarea>
+        <button type="submit" class="btn btn--primario btn--grande"><svg class="ic"><use href="#i-mail"/></svg>Enviar mensaje</button>
+        <p class="contacto__nota">Se abre tu correo con el mensaje listo para enviar.</p>
+      </div>
+    </form>
   </div>
 </section>
 
