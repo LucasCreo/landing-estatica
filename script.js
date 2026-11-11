@@ -91,6 +91,19 @@ document.getElementById('anio').textContent = new Date().getFullYear()
 const formContacto = document.getElementById('form-contacto')
 if (formContacto) {
   const campos = formContacto.querySelector('.contacto__campos')
+  // Volver a tocar la opción elegida la desmarca y oculta los campos.
+  let estabaMarcada = null
+  formContacto.querySelectorAll('.contacto__motivos label').forEach(label => {
+    const radio = label.querySelector('input')
+    label.addEventListener('pointerdown', () => { estabaMarcada = radio.checked ? radio : null })
+    radio.addEventListener('click', () => {
+      if (estabaMarcada === radio) {
+        radio.checked = false
+        campos.hidden = true
+      }
+      estabaMarcada = null
+    })
+  })
   formContacto.addEventListener('change', e => {
     if (e.target.name === 'motivo') campos.hidden = false
     if (e.target.classList) e.target.classList.remove('invalido')
