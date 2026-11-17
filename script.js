@@ -58,9 +58,65 @@ document.querySelectorAll('.alternar').forEach(caja => {
   const botones = caja.querySelectorAll('button[data-vista]')
   botones.forEach(b => b.addEventListener('click', () => {
     for (const x of botones) x.setAttribute('aria-pressed', String(x === b))
-    for (const img of caja.querySelectorAll('img[data-vista]')) img.hidden = img.dataset.vista !== b.dataset.vista
+    for (const el of caja.querySelectorAll('[data-vista]:not(button)')) el.hidden = el.dataset.vista !== b.dataset.vista
   }))
 })
+
+// ── Pantallas animadas ──
+// Cada [data-escena] avanza un paso por tic. Desde el paso N, los elementos con data-en="N"
+// reciben .on; data-valores="a,b,c" cambia el texto y data-anchos="a,b,c" (0 a 1) el ancho de
+// una barra según el paso. Al terminar espera un poco y vuelve a empezar. Solo corre a la vista.
+const sinMovimiento = matchMedia('(prefers-reduced-motion: reduce)').matches
+function prepararEscena(raiz) {
+  const marcados = [...raiz.querySelectorAll('[data-en]')]
+  const valores = [...raiz.querySelectorAll('[data-valores]')].map(el => [el, el.dataset.valores.split(',')])
+  const anchos = [...raiz.querySelectorAll('[data-anchos]')].map(el => [el, el.dataset.anchos.split(',')])
+  const ultimo = Math.max(0, ...marcados.map(el => +el.dataset.en), ...valores.map(([, v]) => v.length - 1), ...anchos.map(([, v]) => v.length - 1))
+  const ritmo = +raiz.dataset.ritmo || 1300
+  const pantallas = raiz.matches('.ui, .ui-tel') ? [raiz] : [...raiz.querySelectorAll('.ui, .ui-tel')]
+  let paso = 0, timer = null
+  const pintar = p => {
+    for (const el of marcados) el.classList.toggle('on', +el.dataset.en <= p)
+    for (const [el, v] of valores) el.textContent = v[Math.min(p, v.length - 1)]
+    for (const [el, v] of anchos) el.style.setProperty('--p', v[Math.min(p, v.length - 1)])
+  }
+  const tic = () => {
+    paso++
+    if (paso <= ultimo) { pintar(paso); timer = setTimeout(tic, ritmo); return }
+    // Fin: pausa, fundido y de nuevo desde cero.
+    timer = setTimeout(() => {
+      pantallas.forEach(p => p.classList.add('reinicio'))
+      timer = setTimeout(() => {
+        paso = 0; pintar(0)
+        requestAnimationFrame(() => pantallas.forEach(p => p.classList.remove('reinicio')))
+        timer = setTimeout(tic, ritmo)
+      }, 400)
+    }, ritmo * 2.5)
+  }
+  return {
+    iniciar() { if (timer) return; paso = 0; pintar(0); timer = setTimeout(tic, ritmo * .6) },
+    parar() { clearTimeout(timer); timer = null; pantallas.forEach(p => p.classList.remove('reinicio')) },
+    final() { pintar(ultimo) },
+  }
+}
+const escenas = [...document.querySelectorAll('[data-escena]')].map(raiz => [raiz, prepararEscena(raiz)])
+if (sinMovimiento || !('IntersectionObserver' in window)) {
+  escenas.forEach(([, e]) => e.final())
+} else {
+  const porRaiz = new Map(escenas)
+  const obsEscenas = new IntersectionObserver(entradas => {
+    for (const e of entradas) e.isIntersecting ? porRaiz.get(e.target).iniciar() : porRaiz.get(e.target).parar()
+  }, { threshold: 0.35 })
+  escenas.forEach(([raiz]) => obsEscenas.observe(raiz))
+}
+
+// ── Botones de demo: llevan al formulario con "Quiero una demo" ya elegido ──
+document.querySelectorAll('a[data-demo]').forEach(a => a.addEventListener('click', () => {
+  const radio = document.querySelector('#form-contacto input[name="motivo"][value="Quiero una demo"]')
+  if (!radio) return
+  radio.checked = true
+  radio.dispatchEvent(new Event('change', { bubbles: true }))
+}))
 
 // ── Modo claro / oscuro ──
 // Las capturas tienen su versión oscura en capturas/oscuro/ (la app misma en modo oscuro).

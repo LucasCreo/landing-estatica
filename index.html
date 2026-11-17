@@ -15,6 +15,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="pantallas.css" />
   <script>
     // Tema antes de pintar: lo elegido por la persona o, si no eligió, el del sistema.
     try {
@@ -90,7 +91,7 @@
       </button>
       <!-- TODO: URL de ingreso a la app -->
       <a href="#" class="btn btn--texto">Ingresar</a>
-      <a href="#contacto" class="btn btn--primario">Pedir una demo</a>
+      <a href="#contacto" class="btn btn--primario" data-demo>Pedir una demo</a>
       <button class="nav__menu" id="menu" aria-label="Abrir menú" aria-expanded="false"><svg class="ic"><use href="#i-menu"/></svg></button>
     </div>
   </div>
@@ -106,8 +107,8 @@
       <h1>Recibos firmados, licencias aprobadas y horarios en orden.</h1>
       <p class="hero__bajada">Scuadra junta en un solo lugar lo que hoy está repartido en planillas, mails y carpetas. RRHH lo maneja desde un panel; tu equipo, desde el celular.</p>
       <div class="hero__ctas">
-        <a href="#contacto" class="btn btn--primario btn--grande">Pedir una demo <svg class="ic"><use href="#i-arrow"/></svg></a>
-        <a href="#modulos" class="btn btn--borde btn--grande">Ver las pantallas</a>
+        <a href="#contacto" class="btn btn--primario btn--grande" data-demo>Pedir una demo <svg class="ic"><use href="#i-arrow"/></svg></a>
+        <a href="#modulos" class="btn btn--borde btn--grande">Ver cómo funciona</a>
       </div>
       <ul class="hero__garantias">
         <li><svg class="ic"><use href="#i-check"/></svg>Sin instalar nada</li>
@@ -115,16 +116,52 @@
       </ul>
     </div>
 
-    <div class="hero__visual aparecer">
+    <div class="hero__visual aparecer" data-escena data-ritmo="1100">
       <figure class="navegador">
         <div class="navegador__barra"><i></i><i></i><i></i><span>app.scuadra.com.ar</span></div>
-        <img src="capturas/admin-dashboard.webp" width="1600" height="1000" alt="Panel de RRHH de Scuadra con recibos, solicitudes, vencimientos, horarios y gráficos del equipo" fetchpriority="high" />
+        <div class="ui" role="img" aria-label="Panel de RRHH de Scuadra: los recibos firmados suben, las solicitudes se aprueban y se ven las horas del equipo">
+          <div class="ui-lado"><b>Scuadra</b><i class="act"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <div class="ui-cuerpo">
+            <div class="ui-tit"><div><h4>Hola, Laura</h4><small>Martes 17 de noviembre</small></div><span class="ui-btn">+ Nuevo</span></div>
+            <div class="ui-kpis">
+              <div class="ui-caja ui-kpi"><span>Recibos firmados</span><b><span data-valores="17,18,19,20,21,22,23,24">17</span><small> / 24</small></b><span class="barra"><i data-anchos=".71,.75,.79,.83,.88,.92,.96,1"></i></span></div>
+              <div class="ui-caja ui-kpi"><span>Solicitudes pendientes</span><b data-valores="5,5,4,4,3,3,2,2">5</b><span class="barra"><i style="--p:.4"></i></span></div>
+              <div class="ui-caja ui-kpi oc-kpi"><span>De licencia hoy</span><b>3</b><span class="barra"><i style="--p:.12"></i></span></div>
+            </div>
+            <div class="ui-dos">
+              <div class="ui-caja">
+                <h5>Solicitudes recientes</h5>
+                <div class="ui-tabla">
+                  <div class="ui-fila" style="--cols:1.6fr 1fr auto"><span class="ui-persona"><i class="av" style="--c:#0f766e">MG</i>Martín Gómez</span><span class="oc">Adelanto</span><span class="pill cambia" data-en="2"><span>Pendiente</span><span>Aprobada</span></span></div>
+                  <div class="ui-fila" style="--cols:1.6fr 1fr auto"><span class="ui-persona"><i class="av" style="--c:#7c3aed">SR</i>Sofía Ruiz</span><span class="oc">Certificado</span><span class="pill cambia" data-en="4"><span>Pendiente</span><span>Aprobada</span></span></div>
+                  <div class="ui-fila" style="--cols:1.6fr 1fr auto"><span class="ui-persona"><i class="av" style="--c:#c2410c">JP</i>Juan Pérez</span><span class="oc">Reintegro</span><span class="pill cambia" data-en="6"><span>Pendiente</span><span>Aprobada</span></span></div>
+                </div>
+              </div>
+              <div class="ui-caja oc">
+                <h5>Horas del equipo</h5>
+                <div class="ui-grafico"><i data-en="1" style="--h:55%"></i><i data-en="2" style="--h:80%"></i><i data-en="3" style="--h:68%"></i><i data-en="4" style="--h:92%"></i><i data-en="5" style="--h:74%"></i><i data-en="6" style="--h:40%"></i></div>
+              </div>
+            </div>
+          </div>
+        </div>
       </figure>
       <figure class="celular celular--hero">
-        <img src="capturas/empleado-recibos.webp" width="780" height="1688" alt="Recibos de sueldo firmados, vistos por el empleado en el celular" />
+        <div class="ui-tel" role="img" aria-label="Un empleado firma su recibo de sueldo desde el celular">
+          <span class="ui-tel__hora">9:41</span>
+          <h4>Mis recibos</h4>
+          <div class="ui-caja">
+            <b>Octubre 2026</b><br /><small>Vence el 10/11</small>
+            <div style="margin-top:.6em"><span class="pill cambia" data-en="4"><span>Pendiente</span><span>Firmado</span></span></div>
+            <span class="ui-btn toque" data-en="3" style="display:flex;margin-top:.7em">Firmar</span>
+          </div>
+          <div class="ui-caja"><b>Septiembre 2026</b><div style="margin-top:.4em"><span class="pill pill--ok">Firmado</span></div></div>
+          <div class="ui-caja"><b>Agosto 2026</b><div style="margin-top:.4em"><span class="pill pill--ok">Firmado</span></div></div>
+          <div class="ui-tel__nav"><i></i><i class="act"></i><i></i><i></i></div>
+          <div class="se-va" data-en="6"><div class="ui-sello aparece" data-en="4"><span class="check check--ok"></span>Recibo firmado</div></div>
+        </div>
       </figure>
-      <div class="chip chip--a"><b>17/24</b> firmaron el recibo</div>
-      <div class="chip chip--b"><svg class="ic"><use href="#i-check"/></svg> Adelanto aprobado</div>
+      <div class="chip chip--a"><b><span data-valores="17,18,19,20,21,22,23,24">17</span>/24</b> firmaron el recibo</div>
+      <div class="chip chip--b aparece" data-en="2"><svg class="ic"><use href="#i-check"/></svg> Adelanto aprobado</div>
     </div>
   </div>
 </section>
@@ -201,7 +238,28 @@
    </div>
     <figure class="navegador destacado__captura aparecer">
       <div class="navegador__barra"><i></i><i></i><i></i><span>Recibos › Sueldos Octubre 2026</span></div>
-      <img src="capturas/admin-lote-detalle.webp" width="1600" height="1000" loading="lazy" alt="Lote de recibos de octubre: 17 de 24 empleados ya firmaron, con su conformidad y los pendientes" />
+      <div class="ui" data-escena role="img" aria-label="Lote de recibos de octubre: los empleados van firmando uno por uno y Scuadra avisa a quienes faltan">
+        <div class="ui-lado"><b>Scuadra</b><i></i><i></i><i class="act"></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="ui-cuerpo">
+          <div class="ui-tit"><div><h4>Sueldos Octubre 2026</h4><small>24 recibos · vence el 10/11</small></div><span class="ui-btn ui-btn--borde toque" data-en="5">Reenviar aviso</span></div>
+          <div class="ui-kpis" style="--n:3">
+            <div class="ui-caja ui-kpi"><span>Firmados</span><b><span data-valores="17,18,19,20,21">17</span><small> / 24</small></b><span class="barra"><i data-anchos=".71,.75,.79,.83,.88"></i></span></div>
+            <div class="ui-caja ui-kpi"><span>Pendientes</span><b data-valores="7,6,5,4,3">7</b></div>
+            <div class="ui-caja ui-kpi oc-kpi"><span>No conforme</span><b>1</b></div>
+          </div>
+          <div class="ui-caja">
+            <div class="ui-tabla">
+              <div class="ui-fila ui-fila--cab" style="--cols:.6fr 2fr 1.2fr 1.6fr"><span class="oc">Legajo</span><span>Empleado</span><span>Estado</span><span class="oc">Conformidad</span></div>
+              <div class="ui-fila" style="--cols:.6fr 2fr 1.2fr 1.6fr"><small class="oc">1024</small><span class="ui-persona"><i class="av" style="--c:#0f766e">AL</i>Ana López</span><span><span class="pill cambia" data-en="1"><span>Pendiente</span><span>Firmado</span></span></span><small class="oc aparece" data-en="1">Conforme</small></div>
+              <div class="ui-fila" style="--cols:.6fr 2fr 1.2fr 1.6fr"><small class="oc">1031</small><span class="ui-persona"><i class="av" style="--c:#7c3aed">DM</i>Diego Molina</span><span><span class="pill cambia" data-en="2"><span>Pendiente</span><span>Firmado</span></span></span><small class="oc aparece" data-en="2">Conforme</small></div>
+              <div class="ui-fila" style="--cols:.6fr 2fr 1.2fr 1.6fr"><small class="oc">1047</small><span class="ui-persona"><i class="av" style="--c:#be123c">CV</i>Carla Vega</span><span><span class="pill pill--rojo">No conforme</span></span><small class="oc">“Faltan horas extra”</small></div>
+              <div class="ui-fila" style="--cols:.6fr 2fr 1.2fr 1.6fr"><small class="oc">1052</small><span class="ui-persona"><i class="av" style="--c:#c2410c">JP</i>Juan Pérez</span><span><span class="pill cambia" data-en="3"><span>Pendiente</span><span>Firmado</span></span></span><small class="oc aparece" data-en="3">Conforme</small></div>
+              <div class="ui-fila" style="--cols:.6fr 2fr 1.2fr 1.6fr"><small class="oc">1063</small><span class="ui-persona"><i class="av" style="--c:#1d4ed8">LR</i>Lucía Romero</span><span><span class="pill cambia" data-en="4"><span>Pendiente</span><span>Firmado</span></span></span><small class="oc aparece" data-en="4">Conforme</small></div>
+            </div>
+          </div>
+        </div>
+        <div class="ui-aviso aparece" data-en="6">Recordatorio enviado a 3 personas</div>
+      </div>
     </figure>
   </div>
 </section>
@@ -211,8 +269,8 @@
   <div class="contenedor">
     <div class="encabezado aparecer">
       <p class="etiqueta">Todo en un solo lugar</p>
-      <h2>Estas son las pantallas de verdad</h2>
-      <p>Nada de dibujos: es Scuadra funcionando, con una empresa de ejemplo.</p>
+      <h2>Mirá cómo funciona cada módulo</h2>
+      <p>Un vistazo rápido a lo que hace Scuadra. En la demo lo recorrés completo, con los casos de tu empresa.</p>
     </div>
 
     <div class="pestanas aparecer" role="tablist" aria-label="Módulos">
@@ -239,10 +297,7 @@
         </ul>
       </div>
       <div class="alternar">
-        <figure class="navegador">
-          <img src="capturas/admin-legajos.webp" width="1600" height="1000" alt="Listado de legajos con área, categoría y puesto de cada empleado" data-vista="listado" />
-          <img src="capturas/admin-organigrama.webp" width="1600" height="1000" loading="lazy" alt="Organigrama de la empresa de ejemplo, de la dirección a cada equipo" data-vista="organigrama" hidden />
-        </figure>
+        <figure class="navegador"><div class="navegador__barra"><i></i><i></i><i></i><span>Legajos</span></div><div class="ui" data-escena data-vista="listado" role="img" aria-label="Se importan legajos desde un Excel y aparecen en el listado"><div class="ui-lado"><b>Scuadra</b><i></i><i class="act"></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="ui-cuerpo"><div class="ui-tit"><div><h4>Legajos</h4><small><span data-valores="42,42,42,43,44,45,46,47">42</span> empleados activos</small></div><span class="ui-btn toque" data-en="1">Importar Excel</span></div><div class="ui-caja"><div class="ui-tabla"><div class="ui-fila ui-fila--cab" style="--cols:2fr 1.2fr 1.2fr 1fr"><span>Empleado</span><span>Área</span><span class="oc">Puesto</span><span class="oc">Estado</span></div><div class="ui-fila aparece" data-en="3" style="--cols:2fr 1.2fr 1.2fr 1fr"><span class="ui-persona"><i class="av" style="--c:#0f766e">AL</i>Ana López</span><span>Administración</span><span class="oc">Analista</span><small class="oc">Activo</small></div><div class="ui-fila aparece" data-en="4" style="--cols:2fr 1.2fr 1.2fr 1fr"><span class="ui-persona"><i class="av" style="--c:#7c3aed">DM</i>Diego Molina</span><span>Logística</span><span class="oc">Chofer</span><small class="oc">Activo</small></div><div class="ui-fila aparece" data-en="5" style="--cols:2fr 1.2fr 1.2fr 1fr"><span class="ui-persona"><i class="av" style="--c:#c2410c">CV</i>Carla Vega</span><span>Ventas</span><span class="oc">Vendedora</span><small class="oc">Activo</small></div><div class="ui-fila aparece" data-en="6" style="--cols:2fr 1.2fr 1.2fr 1fr"><span class="ui-persona"><i class="av" style="--c:#1d4ed8">JP</i>Juan Pérez</span><span>Logística</span><span class="oc">Supervisor</span><small class="oc">Activo</small></div><div class="ui-fila aparece" data-en="7" style="--cols:2fr 1.2fr 1.2fr 1fr"><span class="ui-persona"><i class="av" style="--c:#be123c">LR</i>Lucía Romero</span><span>RRHH</span><span class="oc">Generalista</span><small class="oc">Activo</small></div></div></div></div><div class="se-va" data-en="3"><div class="ui-aviso ui-aviso--claro aparece" data-en="1">legajos.xlsx · <span data-valores="0%,0%,60%,100%">0%</span></div></div></div><div class="ui" data-escena data-vista="organigrama" hidden role="img" aria-label="Organigrama de la empresa, de la dirección a cada equipo"><div class="ui-lado"><b>Scuadra</b><i></i><i class="act"></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="ui-cuerpo"><div class="ui-tit"><div><h4>Organigrama</h4><small>Empresa de ejemplo</small></div></div><div class="ui-org"><div class="ui-org__nivel"><div class="ui-nodo aparece" data-en="1"><i class="av" style="--c:#14532d">RG</i><span>Roberto García<small>Dirección</small></span></div></div><div class="ui-org__nivel"><div class="ui-nodo aparece" data-en="2"><i class="av" style="--c:#1d4ed8">LR</i><span>Lucía Romero<small>RRHH</small></span></div><div class="ui-nodo aparece" data-en="2"><i class="av" style="--c:#c2410c">JP</i><span>Juan Pérez<small>Logística</small></span></div><div class="ui-nodo aparece" data-en="2"><i class="av" style="--c:#7c3aed">MS</i><span>Mara Sosa<small>Ventas</small></span></div></div><div class="ui-org__nivel"><div class="ui-nodo aparece" data-en="3"><i class="av" style="--c:#0f766e">AL</i><span>Ana López<small>Analista</small></span></div><div class="ui-nodo aparece" data-en="3"><i class="av" style="--c:#be123c">DM</i><span>Diego Molina<small>Chofer</small></span></div><div class="ui-nodo oc aparece" data-en="3"><i class="av" style="--c:#a16207">CV</i><span>Carla Vega<small>Vendedora</small></span></div></div></div></div></div></figure>
         <div class="alternar__botones" role="group" aria-label="Ver legajos como">
           <button type="button" aria-pressed="true" data-vista="listado">Listado</button>
           <button type="button" aria-pressed="false" data-vista="organigrama">Organigrama</button>
@@ -259,7 +314,7 @@
           <li><svg class="ic"><use href="#i-check"/></svg>Vencimientos con aviso previo, ideal para aptos médicos y licencias de conducir</li>
         </ul>
       </div>
-      <figure class="navegador"><img src="capturas/admin-documento-detalle.webp" width="1600" height="1000" loading="lazy" alt="Detalle de un documento enviado: cinco de ocho empleados ya lo leyeron y tres están pendientes" /></figure>
+      <figure class="navegador"><div class="navegador__barra"><i></i><i></i><i></i><span>Documentos › Política de uso de vehículos</span></div><div class="ui" data-escena role="img" aria-label="Detalle de un documento enviado: los empleados lo van firmando y el contador sube hasta completar"><div class="ui-lado"><b>Scuadra</b><i></i><i></i><i class="act"></i><i></i><i></i><i></i><i></i><i></i></div><div class="ui-cuerpo"><div class="ui-tit"><div><h4>Política de uso de vehículos</h4><small>Enviado a Logística · requiere firma</small></div><span class="pill pill--azul">Firma</span></div><div class="ui-kpis" style="--n:2"><div class="ui-caja ui-kpi"><span>Firmaron</span><b><span data-valores="5,5,6,7,8">5</span><small> / 8</small></b><span class="barra"><i data-anchos=".62,.62,.75,.87,1"></i></span></div><div class="ui-caja ui-kpi oc-kpi"><span>Vence</span><b>31/12</b></div></div><div class="ui-caja"><div class="ui-tabla"><div class="ui-fila ui-fila--cab" style="--cols:2fr 1.2fr 1fr"><span>Empleado</span><span>Estado</span><span class="oc">Fecha</span></div><div class="ui-fila" style="--cols:2fr 1.2fr 1fr"><span class="ui-persona"><i class="av" style="--c:#0f766e">AL</i>Ana López</span><span><span class="pill pill--ok">Firmado</span></span><small class="oc">16/11</small></div><div class="ui-fila" style="--cols:2fr 1.2fr 1fr"><span class="ui-persona"><i class="av" style="--c:#7c3aed">DM</i>Diego Molina</span><span><span class="pill pill--ok">Firmado</span></span><small class="oc">16/11</small></div><div class="ui-fila" style="--cols:2fr 1.2fr 1fr"><span class="ui-persona"><i class="av" style="--c:#c2410c">CV</i>Carla Vega</span><span><span class="pill cambia" data-en="2"><span>Pendiente</span><span>Firmado</span></span></span><small class="oc aparece" data-en="2">17/11</small></div><div class="ui-fila" style="--cols:2fr 1.2fr 1fr"><span class="ui-persona"><i class="av" style="--c:#1d4ed8">JP</i>Juan Pérez</span><span><span class="pill cambia" data-en="3"><span>Pendiente</span><span>Firmado</span></span></span><small class="oc aparece" data-en="3">17/11</small></div><div class="ui-fila" style="--cols:2fr 1.2fr 1fr"><span class="ui-persona"><i class="av" style="--c:#be123c">LR</i>Lucía Romero</span><span><span class="pill cambia" data-en="4"><span>Pendiente</span><span>Firmado</span></span></span><small class="oc aparece" data-en="4">17/11</small></div></div></div></div><div class="ui-aviso aparece" data-en="5">Todos firmaron</div></div></figure>
     </div>
     <div class="modulo" role="tabpanel" id="m-solicitudes" aria-labelledby="t-solicitudes" hidden>
       <div class="modulo__texto">
@@ -271,7 +326,7 @@
           <li><svg class="ic"><use href="#i-check"/></svg>Constancia en PDF de cada solicitud resuelta</li>
         </ul>
       </div>
-      <figure class="navegador"><img src="capturas/admin-solicitudes.webp" width="1600" height="1000" loading="lazy" alt="Solicitudes recibidas: certificados, adelantos y reintegros pendientes, aprobados y rechazados" /></figure>
+      <figure class="navegador"><div class="navegador__barra"><i></i><i></i><i></i><span>Solicitudes</span></div><div class="ui" data-escena role="img" aria-label="Una solicitud de adelanto pasa por el jefe y por RRHH, queda aprobada y genera su constancia"><div class="ui-lado"><b>Scuadra</b><i></i><i></i><i></i><i class="act"></i><i></i><i></i><i></i><i></i></div><div class="ui-cuerpo"><div class="ui-tit"><div><h4>Solicitudes</h4><small>3 en curso</small></div><span class="ui-btn ui-btn--borde">Filtros</span></div><div class="ui-dos"><div class="ui-caja"><h5>Recibidas</h5><div class="ui-tabla"><div class="ui-fila" style="--cols:1.6fr 1fr auto"><span class="ui-persona"><i class="av" style="--c:#0f766e">MG</i>Martín Gómez</span><span class="oc">Adelanto</span><span><span class="pill cambia" data-en="4"><span>Pendiente</span><span>Aprobada</span></span></span></div><div class="ui-fila" style="--cols:1.6fr 1fr auto"><span class="ui-persona"><i class="av" style="--c:#7c3aed">SR</i>Sofía Ruiz</span><span class="oc">Certificado</span><span><span class="pill pill--ok">Aprobada</span></span></div><div class="ui-fila" style="--cols:1.6fr 1fr auto"><span class="ui-persona"><i class="av" style="--c:#c2410c">JP</i>Juan Pérez</span><span class="oc">Reintegro</span><span><span class="pill">Pendiente</span></span></div></div></div><div class="ui-caja"><h5>Adelanto de sueldo · $150.000</h5><small>Martín Gómez · Logística</small><div class="ui-circuito" style="margin-top:.8em"><div><span class="check" data-en="1"></span><span>Jefe directo · Juan Pérez</span></div><div><span class="check" data-en="3"></span><span>Recursos Humanos</span></div><div class="aparece" data-en="5"><span class="pill pill--azul">PDF</span><small>Constancia lista para descargar</small></div></div></div></div></div><div class="ui-aviso aparece" data-en="4">Solicitud aprobada</div></div></figure>
     </div>
     <div class="modulo" role="tabpanel" id="m-licencias" aria-labelledby="t-licencias" hidden>
       <div class="modulo__texto">
@@ -283,7 +338,7 @@
           <li><svg class="ic"><use href="#i-check"/></svg>Las licencias aprobadas aparecen en el calendario</li>
         </ul>
       </div>
-      <figure class="navegador"><img src="capturas/admin-licencias.webp" width="1600" height="1000" loading="lazy" alt="Pedidos de licencia con su tipo, fechas y estado" /></figure>
+      <figure class="navegador"><div class="navegador__barra"><i></i><i></i><i></i><span>Licencias</span></div><div class="ui" data-escena role="img" aria-label="Un pedido de vacaciones se aprueba, se marca en el calendario y el saldo se descuenta solo"><div class="ui-lado"><b>Scuadra</b><i></i><i></i><i></i><i></i><i class="act"></i><i></i><i></i><i></i></div><div class="ui-cuerpo"><div class="ui-tit"><div><h4>Licencias</h4><small>Pedidos de tu equipo</small></div></div><div class="ui-dos"><div class="ui-caja"><h5>Vacaciones · Sofía Ruiz</h5><small>Del 19/11 al 28/11 · 8 días hábiles</small><div style="margin:.7em 0 .9em"><span><span class="pill cambia" data-en="2"><span>Pendiente</span><span>Aprobada</span></span></span></div><span class="ui-btn toque" data-en="1">Aprobar</span></div><div class="ui-caja"><h5>Saldo de vacaciones 2026</h5><div class="ui-kpi"><b><span data-valores="21,21,21,21,13">21</span><small> días</small></b></div><span class="barra"><i data-anchos="1,1,1,1,.62"></i></span><small class="aparece" data-en="4" style="display:block;margin-top:.5em">Se descontaron 8 días</small></div></div><div class="ui-cal" style="flex:none"><span class="dow">D</span><span class="dow">L</span><span class="dow">M</span><span class="dow">M</span><span class="dow">J</span><span class="dow">V</span><span class="dow">S</span><span style="min-height:2em">16</span><span style="min-height:2em">17</span><span style="min-height:2em">18</span><span class="aparece" data-en="3" style="min-height:2em;background:var(--ui-ok-fondo);color:var(--ui-ok)">19</span><span class="aparece" data-en="3" style="min-height:2em;background:var(--ui-ok-fondo);color:var(--ui-ok)">20</span><span class="aparece" data-en="3" style="min-height:2em;background:var(--ui-ok-fondo);color:var(--ui-ok)">21</span><span style="min-height:2em">22</span><span style="min-height:2em">23</span><span class="aparece" data-en="3" style="min-height:2em;background:var(--ui-ok-fondo);color:var(--ui-ok)">24</span><span class="aparece" data-en="3" style="min-height:2em;background:var(--ui-ok-fondo);color:var(--ui-ok)">25</span><span class="aparece" data-en="3" style="min-height:2em;background:var(--ui-ok-fondo);color:var(--ui-ok)">26</span><span class="aparece" data-en="3" style="min-height:2em;background:var(--ui-ok-fondo);color:var(--ui-ok)">27</span><span class="aparece" data-en="3" style="min-height:2em;background:var(--ui-ok-fondo);color:var(--ui-ok)">28</span><span style="min-height:2em">29</span></div></div></div></figure>
     </div>
     <div class="modulo" role="tabpanel" id="m-horarios" aria-labelledby="t-horarios" hidden>
       <div class="modulo__texto">
@@ -295,7 +350,7 @@
           <li><svg class="ic"><use href="#i-check"/></svg>Planilla del mes exportable a Excel</li>
         </ul>
       </div>
-      <figure class="navegador"><img src="capturas/admin-horarios-mes.webp" width="1600" height="1000" loading="lazy" alt="Planilla mensual de horarios con horas trabajadas, esperadas, saldo y llegadas tarde" /></figure>
+      <figure class="navegador"><div class="navegador__barra"><i></i><i></i><i></i><span>Horarios › Planilla del mes</span></div><div class="ui" data-escena role="img" aria-label="Los empleados fichan desde el celular y la planilla del mes suma las horas sola"><div class="ui-lado"><b>Scuadra</b><i></i><i></i><i></i><i></i><i></i><i class="act"></i><i></i><i></i></div><div class="ui-cuerpo"><div class="ui-tit"><div><h4>Horarios</h4><small>Noviembre 2026 · planilla del mes</small></div><span class="ui-btn ui-btn--borde">Exportar Excel</span></div><div class="ui-caja"><div class="ui-tabla"><div class="ui-fila ui-fila--cab" style="--cols:1.8fr 1fr 1fr 1fr 1fr"><span>Empleado</span><span>Trabajadas</span><span class="oc">Esperadas</span><span class="oc">Saldo</span><span class="oc">Tardanzas</span></div><div class="ui-fila" style="--cols:1.8fr 1fr 1fr 1fr 1fr"><span class="ui-persona"><i class="av" style="--c:#0f766e">AL</i>Ana López</span><b data-valores="152,154,156,158,160">152</b><span class="oc">160</span><span class="oc" data-valores="-8,-6,-4,-2,0">-8</span><span class="oc">0</span></div><div class="ui-fila" style="--cols:1.8fr 1fr 1fr 1fr 1fr"><span class="ui-persona"><i class="av" style="--c:#7c3aed">DM</i>Diego Molina</span><b data-valores="150,153,157,161,165">150</b><span class="oc">160</span><span class="oc" data-valores="-10,-7,-3,+1,+5">-10</span><span class="oc">2</span></div><div class="ui-fila" style="--cols:1.8fr 1fr 1fr 1fr 1fr"><span class="ui-persona"><i class="av" style="--c:#c2410c">JP</i>Juan Pérez</span><b data-valores="170,173,176,178,181">170</b><span class="oc">180</span><span class="oc" data-valores="-10,-7,-4,-2,+1">-10</span><span class="oc">0</span></div><div class="ui-fila" style="--cols:1.8fr 1fr 1fr 1fr 1fr"><span class="ui-persona"><i class="av" style="--c:#1d4ed8">LR</i>Lucía Romero</span><b data-valores="148,151,154,157,159">148</b><span class="oc">160</span><span class="oc" data-valores="-12,-9,-6,-3,-1">-12</span><span class="oc">1</span></div></div></div><div class="ui-caja"><h5>Fichajes de hoy</h5><div class="ui-tabla"><div class="ui-fila aparece" data-en="1" style="--cols:auto 1fr auto"><span class="pill pill--ok">08:52</span><span>Juan Pérez</span><small class="oc">Entrada · celular</small></div><div class="ui-fila aparece" data-en="2" style="--cols:auto 1fr auto"><span class="pill pill--ok">08:58</span><span>Ana López</span><small class="oc">Entrada · celular</small></div><div class="ui-fila aparece" data-en="3" style="--cols:auto 1fr auto"><span class="pill pill--ok">09:04</span><span>Diego Molina</span><small class="oc">Entrada · celular</small></div></div></div></div></div></figure>
     </div>
     <div class="modulo" role="tabpanel" id="m-calendario" aria-labelledby="t-calendario" hidden>
       <div class="modulo__texto">
@@ -307,7 +362,7 @@
           <li><svg class="ic"><use href="#i-check"/></svg>Se sincroniza con Google Calendar</li>
         </ul>
       </div>
-      <figure class="navegador"><img src="capturas/admin-calendario.webp" width="1600" height="1000" loading="lazy" alt="Calendario del mes con feriados, capacitaciones y eventos de la empresa" /></figure>
+      <figure class="navegador"><div class="navegador__barra"><i></i><i></i><i></i><span>Calendario</span></div><div class="ui" data-escena role="img" aria-label="Calendario del mes donde aparecen capacitaciones, cumpleaños, vacaciones y feriados"><div class="ui-lado"><b>Scuadra</b><i></i><i></i><i></i><i></i><i></i><i></i><i class="act"></i><i></i></div><div class="ui-cuerpo"><div class="ui-tit"><div><h4>Calendario</h4><small>Noviembre 2026</small></div><span class="ui-btn">+ Evento</span></div><div class="ui-cal"><span class="dow">Dom</span><span class="dow">Lun</span><span class="dow">Mar</span><span class="dow">Mié</span><span class="dow">Jue</span><span class="dow">Vie</span><span class="dow">Sáb</span><span>1</span><span>2</span><span>3<em class="aparece" data-en="1" style="--c:var(--ui-azul-fondo)">Capacitación</em></span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10<em class="aparece" data-en="2" style="--c:var(--ui-ambar-fondo)">Cumple de Ana</em></span><span>11</span><span>12</span><span>13</span><span>14</span><span>15</span><span>16</span><span>17<em class="aparece" data-en="3" style="--c:var(--ui-ok-fondo)">Vacaciones Sofía</em></span><span>18<em class="aparece" data-en="3" style="--c:var(--ui-ok-fondo)">Vacaciones Sofía</em></span><span>19<em class="aparece" data-en="3" style="--c:var(--ui-ok-fondo)">Vacaciones Sofía</em></span><span>20</span><span>21</span><span>22</span><span>23</span><span>24<em class="aparece" data-en="4" style="--c:var(--ui-rojo-fondo)">Feriado</em></span><span>25</span><span>26</span><span>27<em class="aparece" data-en="5" style="--c:var(--ui-azul-fondo)">Reunión general</em></span><span>28</span></div></div></div></figure>
     </div>
 
     <div class="modulo" role="tabpanel" id="m-evaluaciones" aria-labelledby="t-evaluaciones" hidden>
@@ -320,7 +375,7 @@
           <li><svg class="ic"><use href="#i-check"/></svg>Cada empleado ve sus resultados en su portal</li>
         </ul>
       </div>
-      <figure class="navegador"><img src="capturas/admin-evaluaciones.webp" width="1600" height="1000" loading="lazy" alt="Ronda de evaluación de desempeño con los resultados de cada empleado por criterio" /></figure>
+      <figure class="navegador"><div class="navegador__barra"><i></i><i></i><i></i><span>Evaluaciones</span></div><div class="ui" data-escena role="img" aria-label="Ronda de evaluación: se completan las evaluaciones de cada empleado y se calcula el promedio"><div class="ui-lado"><b>Scuadra</b><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="act"></i></div><div class="ui-cuerpo"><div class="ui-tit"><div><h4>Evaluación semestral</h4><small>Segundo semestre 2026 · 4 criterios</small></div><span class="pill cambia" data-en="5"><span>En curso</span><span>Completa</span></span></div><div class="ui-kpis" style="--n:3"><div class="ui-caja ui-kpi"><span>Completadas</span><b><span data-valores="0,1,2,3,4">0</span><small> / 4</small></b></div><div class="ui-caja ui-kpi"><span>Promedio</span><b><span data-valores="—,4.3,4.0,4.2,4.1">—</span></b></div><div class="ui-caja ui-kpi oc-kpi"><span>Criterios</span><b>4</b></div></div><div class="ui-caja"><div class="ui-tabla"><div class="ui-fila ui-fila--cab" style="--cols:1.6fr 2fr .6fr"><span>Empleado</span><span>Resultado</span><span>Nota</span></div><div class="ui-fila" style="--cols:1.6fr 2fr .6fr"><span class="ui-persona"><i class="av" style="--c:#0f766e">AL</i>Ana López</span><span class="barra" data-en="1" style="--de:0;--p:0.86"><i></i></span><b class="aparece" data-en="1">4,3</b></div><div class="ui-fila" style="--cols:1.6fr 2fr .6fr"><span class="ui-persona"><i class="av" style="--c:#7c3aed">DM</i>Diego Molina</span><span class="barra" data-en="2" style="--de:0;--p:0.72"><i></i></span><b class="aparece" data-en="2">3,6</b></div><div class="ui-fila" style="--cols:1.6fr 2fr .6fr"><span class="ui-persona"><i class="av" style="--c:#c2410c">CV</i>Carla Vega</span><span class="barra" data-en="3" style="--de:0;--p:0.94"><i></i></span><b class="aparece" data-en="3">4,7</b></div><div class="ui-fila" style="--cols:1.6fr 2fr .6fr"><span class="ui-persona"><i class="av" style="--c:#1d4ed8">JP</i>Juan Pérez</span><span class="barra" data-en="4" style="--de:0;--p:0.8"><i></i></span><b class="aparece" data-en="4">4,0</b></div></div></div></div></div></figure>
     </div>
     <div class="modulo" role="tabpanel" id="m-capacitaciones" aria-labelledby="t-capacitaciones" hidden>
       <div class="modulo__texto">
@@ -332,7 +387,7 @@
           <li><svg class="ic"><use href="#i-check"/></svg>Los empleados pueden dejar preguntas y RRHH las responde</li>
         </ul>
       </div>
-      <figure class="navegador"><img src="capturas/admin-capacitaciones.webp" width="1600" height="1000" loading="lazy" alt="Progreso de una capacitación: avance de cada empleado, lecciones completadas y última actividad" /></figure>
+      <figure class="navegador"><div class="navegador__barra"><i></i><i></i><i></i><span>Capacitaciones › Seguridad e higiene</span></div><div class="ui" data-escena role="img" aria-label="Progreso de una capacitación: cada empleado avanza en las lecciones y aprueba el cuestionario"><div class="ui-lado"><b>Scuadra</b><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="act"></i></div><div class="ui-cuerpo"><div class="ui-tit"><div><h4>Seguridad e higiene</h4><small>5 lecciones · cuestionario final · vence el 30/11</small></div><span class="ui-btn ui-btn--borde">Preguntas <span class="pill pill--azul aparece" data-en="1">1</span></span></div><div class="ui-kpis" style="--n:3"><div class="ui-caja ui-kpi"><span>Avance promedio</span><b data-valores="30%,50%,65%,80%,90%">30%</b></div><div class="ui-caja ui-kpi"><span>Finalizaron</span><b><span data-valores="0,0,1,2,3">0</span><small> / 4</small></b></div><div class="ui-caja ui-kpi oc-kpi"><span>Lecciones</span><b>5</b></div></div><div class="ui-caja"><div class="ui-tabla"><div class="ui-fila ui-fila--cab" style="--cols:1.6fr 2fr auto"><span>Empleado</span><span>Progreso</span><span>Estado</span></div><div class="ui-fila" style="--cols:1.6fr 2fr auto"><span class="ui-persona"><i class="av" style="--c:#0f766e">AL</i>Ana López</span><span class="barra"><i data-anchos=".4,.6,.8,1,1" style="--p:.4"></i></span><span class="aparece" data-en="3"><span class="pill pill--ok">Aprobado</span></span></div><div class="ui-fila" style="--cols:1.6fr 2fr auto"><span class="ui-persona"><i class="av" style="--c:#7c3aed">DM</i>Diego Molina</span><span class="barra"><i data-anchos=".2,.4,.6,.8,1" style="--p:.2"></i></span><span class="aparece" data-en="4"><span class="pill pill--ok">Aprobado</span></span></div><div class="ui-fila" style="--cols:1.6fr 2fr auto"><span class="ui-persona"><i class="av" style="--c:#c2410c">JP</i>Juan Pérez</span><span class="barra"><i data-anchos=".6,.8,1,1,1" style="--p:.6"></i></span><span class="aparece" data-en="2"><span class="pill pill--ok">Aprobado</span></span></div><div class="ui-fila" style="--cols:1.6fr 2fr auto"><span class="ui-persona"><i class="av" style="--c:#1d4ed8">LR</i>Lucía Romero</span><span class="barra"><i data-anchos="0,.2,.2,.4,.6" style="--p:0"></i></span><span><span class="pill pill--gris">En curso</span></span></div></div></div></div></div></figure>
     </div>
     <div class="modulo" role="tabpanel" id="m-onboarding" aria-labelledby="t-onboarding" hidden>
       <div class="modulo__texto">
@@ -344,13 +399,17 @@
           <li><svg class="ic"><use href="#i-check"/></svg>RRHH revisa lo que se adjunta y sigue el avance de cada uno</li>
         </ul>
       </div>
-      <figure class="navegador"><img src="capturas/admin-onboarding.webp" width="1600" height="1000" loading="lazy" alt="Onboarding en curso de tres ingresos, con su avance y el paso en el que están" /></figure>
+      <figure class="navegador"><div class="navegador__barra"><i></i><i></i><i></i><span>Onboarding</span></div><div class="ui" data-escena role="img" aria-label="Onboarding de un ingreso: se completan sus pasos uno por uno hasta llegar al 100%"><div class="ui-lado"><b>Scuadra</b><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="act"></i></div><div class="ui-cuerpo"><div class="ui-tit"><div><h4>Onboarding</h4><small>3 ingresos en curso</small></div><span class="ui-btn">+ Asignar</span></div><div class="ui-dos"><div class="ui-caja"><h5 style="display:flex;justify-content:space-between">Lucía Fernández <span data-valores="0%,20%,40%,60%,80%,100%">0%</span></h5><small>Ingresa el 1/12 · Ventas</small><span class="barra" style="margin:.6em 0 .8em"><i data-anchos="0,.2,.4,.6,.8,1"></i></span><div class="ui-circuito"><div><span class="check" data-en="1"></span><span>Datos personales y bancarios</span></div><div><span class="check" data-en="2"></span><span>DNI y título</span></div><div><span class="check" data-en="3"></span><span>Firma del contrato</span></div><div><span class="check" data-en="4"></span><span>Curso de bienvenida</span></div><div><span class="check" data-en="5"></span><span>Reunión con su jefe</span></div></div></div><div class="ui-caja oc"><h5>Otros ingresos</h5><div class="ui-tabla"><div class="ui-fila" style="--cols:1.6fr 1.6fr"><span class="ui-persona"><i class="av" style="--c:#1d4ed8">TB</i>Tomás Benítez</span><span class="barra"><i style="--p:0.8"></i></span></div><div class="ui-fila" style="--cols:1.6fr 1.6fr"><span class="ui-persona"><i class="av" style="--c:#be123c">PA</i>Paula Acosta</span><span class="barra"><i style="--p:0.3"></i></span></div></div></div></div></div><div class="ui-aviso aparece" data-en="6">Onboarding completo</div></div></figure>
     </div>
     <div class="extras aparecer">
       <div class="extra"><svg class="ic"><use href="#i-megaphone"/></svg><div><b>Avisos internos</b><span>Comunicados con fijado, reacciones y comentarios.</span></div></div>
       <div class="extra"><svg class="ic"><use href="#i-sheet"/></svg><div><b>Vencimientos</b><span>Aptos médicos y documentos que vencen, con aviso previo.</span></div></div>
       <div class="extra"><svg class="ic"><use href="#i-plane"/></svg><div><b>Fuera de oficina</b><span>Si alguien no está, sus aprobaciones pasan a su jefe.</span></div></div>
       <div class="extra"><svg class="ic"><use href="#i-bell"/></svg><div><b>Pendientes a la vista</b><span>Cada responsable ve lo que le falta aprobar o revisar.</span></div></div>
+    </div>
+    <div class="cta-demo aparecer">
+      <p><b>¿Querés verlo con los casos de tu empresa?</b> En una demo te mostramos los módulos que te interesan.</p>
+      <a href="#contacto" class="btn btn--primario" data-demo>Pedir una demo <svg class="ic"><use href="#i-arrow"/></svg></a>
     </div>
   </div>
 </section>
@@ -364,10 +423,10 @@
       <p>Entra desde el navegador con su mail y su contraseña. Ve sus recibos, ficha, pide días y se entera de las novedades.</p>
     </div>
     <div class="celulares">
-      <figure class="tel aparecer"><div class="celular"><img src="capturas/empleado-inicio.webp" width="780" height="1688" loading="lazy" alt="Inicio del empleado con su jornada de hoy y el botón para iniciar" /></div><figcaption>Ficha la entrada con un toque</figcaption></figure>
-      <figure class="tel aparecer"><div class="celular"><img src="capturas/empleado-recibos.webp" width="780" height="1688" loading="lazy" alt="Recibos de sueldo del empleado, firmados" /></div><figcaption>Firma y descarga sus recibos</figcaption></figure>
-      <figure class="tel aparecer"><div class="celular"><img src="capturas/empleado-horarios.webp" width="780" height="1688" loading="lazy" alt="Horario de la semana y banco de horas del empleado" /></div><figcaption>Sabe qué horario le toca</figcaption></figure>
-      <figure class="tel aparecer"><div class="celular"><img src="capturas/empleado-portal.webp" width="780" height="1688" loading="lazy" alt="Avisos de la empresa vistos por el empleado" /></div><figcaption>Se entera de las novedades</figcaption></figure>
+      <figure class="tel aparecer"><div class="celular"><div class="ui-tel" data-escena data-ritmo="1200" role="img" aria-label="El empleado inicia su jornada con un toque y queda registrada la entrada"><span class="ui-tel__hora">9:41</span><h4>Hola, Juan</h4><small>Martes 17 de noviembre</small><div class="ui-caja"><small>Tu jornada de hoy</small><br /><b style="font-size:1.4em">09:00 – 18:00</b><div style="margin-top:.5em"><span class="pill cambia" data-en="2"><span>Sin iniciar</span><span>En jornada</span></span></div></div><span class="ui-btn toque" data-en="1">Iniciar jornada</span><div class="ui-caja aparece" data-en="2"><small>Entrada registrada</small><br /><b data-valores="08:58,08:58,08:58">08:58</b> <small>· desde el celular</small></div><div class="ui-caja aparece" data-en="3"><small>Banco de horas</small><br /><b style="color:var(--ui-ok)">+2:30 h</b></div><div class="ui-tel__nav"><i class="act"></i><i></i><i></i><i></i></div></div></div><figcaption>Ficha la entrada con un toque</figcaption></figure>
+      <figure class="tel aparecer"><div class="celular"><div class="ui-tel" data-escena data-ritmo="1200" role="img" aria-label="El empleado abre su recibo, lo firma conforme y queda firmado"><span class="ui-tel__hora">9:41</span><h4>Mis recibos</h4><div class="ui-caja"><b>Octubre 2026</b><br /><small>Vence el 10/11</small><div style="margin-top:.5em"><span class="pill cambia" data-en="3"><span>Pendiente</span><span>Firmado</span></span></div><div class="se-va" data-en="3"><span class="ui-btn toque" data-en="2" style="display:flex;margin-top:.6em">Firmar conforme</span></div></div><div class="ui-caja"><b>Septiembre 2026</b><div style="margin-top:.4em"><span class="pill pill--ok">Firmado</span></div></div><div class="ui-caja"><b>Agosto 2026</b><div style="margin-top:.4em"><span class="pill pill--ok">Firmado</span></div></div><div class="se-va" data-en="5"><div class="ui-sello aparece" data-en="3"><span class="check check--ok"></span>Recibo firmado</div></div><div class="ui-tel__nav"><i></i><i class="act"></i><i></i><i></i></div></div></div><figcaption>Firma y descarga sus recibos</figcaption></figure>
+      <figure class="tel aparecer"><div class="celular"><div class="ui-tel" data-escena data-ritmo="1200" role="img" aria-label="El empleado ve el horario de su semana, sus turnos y su banco de horas"><span class="ui-tel__hora">9:41</span><h4>Mi horario</h4><small>Semana del 16 al 21 de noviembre</small><div style="display:grid;gap:.45em"><div class="ui-caja aparece" data-en="1" style="display:flex;justify-content:space-between;align-items:center;padding:.55em .8em"><span><b>Lun</b> <small>09:00 – 18:00</small></span></div><div class="ui-caja aparece" data-en="1" style="border-color:var(--verde);display:flex;justify-content:space-between;align-items:center;padding:.55em .8em"><span><b>Mar</b> <small>09:00 – 18:00</small></span><span class="pill pill--ok">Hoy</span></div><div class="ui-caja aparece" data-en="1" style="display:flex;justify-content:space-between;align-items:center;padding:.55em .8em"><span><b>Mié</b> <small>09:00 – 18:00</small></span></div><div class="ui-caja aparece" data-en="1" style="display:flex;justify-content:space-between;align-items:center;padding:.55em .8em"><span><b>Jue</b> <small>13:00 – 22:00</small></span><span class="pill pill--azul aparece" data-en="2">Turno tarde</span></div><div class="ui-caja aparece" data-en="1" style="display:flex;justify-content:space-between;align-items:center;padding:.55em .8em"><span><b>Vie</b> <small>09:00 – 18:00</small></span></div><div class="ui-caja aparece" data-en="1" style="display:flex;justify-content:space-between;align-items:center;padding:.55em .8em"><span><b>Sáb</b> <small>Franco</small></span><span class="pill pill--gris">Franco</span></div></div><div class="ui-caja aparece" data-en="3" style="display:flex;justify-content:space-between"><small>Banco de horas</small><b style="color:var(--ui-ok)">+2:30 h</b></div><div class="ui-tel__nav"><i></i><i></i><i class="act"></i><i></i></div></div></div><figcaption>Sabe qué horario le toca</figcaption></figure>
+      <figure class="tel aparecer"><div class="celular"><div class="ui-tel" data-escena data-ritmo="1200" role="img" aria-label="El empleado ve un aviso de la empresa, reacciona y comenta"><span class="ui-tel__hora">9:41</span><h4>Avisos</h4><div class="ui-caja"><small>RRHH · hace 2 horas</small><br /><b>¡Se viene la fiesta de fin de año!</b><p style="margin:.4em 0;font-size:.92em;color:var(--tinta-2)">Viernes 12 de diciembre a las 20 h. Confirmá tu asistencia en el formulario.</p><div style="display:flex;gap:.5em;align-items:center"><span class="pill pill--gris toque" data-en="2">🎉 <span data-valores="12,12,13,14,15,16">12</span></span><span class="pill pill--gris">💬 <span data-valores="3,3,3,4,4,4">3</span></span></div></div><div class="burbuja aparece" data-en="3"><b>Ana López</b><br />¡Ahí estaremos! 🙌</div><div class="ui-caja"><small>RRHH · ayer</small><br /><b>Nuevo beneficio: gimnasio con descuento</b></div><div class="ui-tel__nav"><i></i><i></i><i></i><i class="act"></i></div></div></div><figcaption>Se entera de las novedades</figcaption></figure>
     </div>
   </div>
 </section>
@@ -383,7 +442,7 @@
 
     <div class="asistente">
       <figure class="tel aparecer">
-        <div class="celular"><img src="capturas/empleado-asistente.webp" width="780" height="1688" loading="lazy" alt="Chat del asistente: responde cuántos días de vacaciones le quedan, si firmó el recibo y qué dice la política de uso de vehículos" /></div>
+        <div class="celular"><div class="ui-tel" data-escena data-ritmo="1100" role="img" aria-label="Chat del asistente: responde cuántos días de vacaciones le quedan y si firmó el recibo de octubre"><span class="ui-tel__hora">9:41</span><h4>Asistente</h4><div class="ui-chat"><div class="burbuja burbuja--bot">¡Hola, Juan! ¿En qué te ayudo?</div><div class="burbuja burbuja--yo aparece" data-en="1">¿Cuántos días de vacaciones me quedan?</div><div class="colapsa" data-en="3"><div class="burbuja burbuja--bot aparece" data-en="2"><span class="puntos"><i></i><i></i><i></i></span></div></div><div class="burbuja burbuja--bot aparece" data-en="3">Te quedan <b>13 días</b> de 2026. Los pedís desde Licencias › Nueva licencia.</div><div class="burbuja burbuja--yo aparece" data-en="5">¿Ya firmé el recibo de octubre?</div><div class="colapsa" data-en="7"><div class="burbuja burbuja--bot aparece" data-en="6"><span class="puntos"><i></i><i></i><i></i></span></div></div><div class="burbuja burbuja--bot aparece" data-en="7">Sí, lo firmaste conforme el 3/11. ✅</div></div><div class="ui-tel__nav"><i></i><i></i><i></i><i class="act"></i></div></div></div>
       </figure>
       <div class="asistente__texto aparecer">
         <ul class="consultas">
@@ -420,7 +479,7 @@
       </div>
       <figure class="navegador aparecer">
         <div class="navegador__barra"><i></i><i></i><i></i><span>Configuración › Asistente virtual</span></div>
-        <img src="capturas/admin-asistente.webp" width="1600" height="1028" loading="lazy" alt="Configuración del asistente: indicaciones de la empresa, datos del empleado que puede consultar y documentos cargados" />
+        <div class="ui" data-escena role="img" aria-label="Configuración del asistente: se cargan los documentos de la empresa y se eligen los datos del empleado que puede usar"><div class="ui-lado"><b>Scuadra</b><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="act"></i></div><div class="ui-cuerpo"><div class="ui-tit"><div><h4>Asistente virtual</h4><small>Claude · 50 consultas por día por persona</small></div><span class="interruptor interruptor--on"></span></div><div class="ui-dos"><div class="ui-caja"><h5>Documentos de la empresa</h5><div class="ui-tabla"><div class="ui-fila aparece" data-en="1" style="--cols:auto 1fr auto"><span class="pill pill--azul">PDF</span><span>Reglamento interno.pdf</span><small class="oc">Listo</small></div><div class="ui-fila aparece" data-en="2" style="--cols:auto 1fr auto"><span class="pill pill--azul">PDF</span><span>Política de vehículos.pdf</span><small class="oc">Listo</small></div><div class="ui-fila aparece" data-en="3" style="--cols:auto 1fr auto"><span class="pill pill--azul">DOC</span><span>Preguntas frecuentes.docx</span><small class="oc">Listo</small></div></div></div><div class="ui-caja"><h5>Datos que puede usar</h5><div style="display:flex;justify-content:space-between;align-items:center;padding:.35em 0"><span>Saldo de vacaciones</span><span class="interruptor interruptor--on"></span></div><div style="display:flex;justify-content:space-between;align-items:center;padding:.35em 0"><span>Estado de sus recibos</span><span class="interruptor" data-en="4"></span></div><div style="display:flex;justify-content:space-between;align-items:center;padding:.35em 0"><span>Jefe directo</span><span class="interruptor" data-en="5"></span></div><div style="display:flex;justify-content:space-between;align-items:center;padding:.35em 0"><span>Importes del recibo</span><span class="interruptor interruptor--on"></span></div></div></div><div class="ui-caja"><h5>Indicaciones</h5><small><span class="escribe" data-en="1">Respondé con tono cercano. Si no sabés algo, derivá a rrhh@empresa.com.</span></small></div></div><div class="ui-aviso aparece" data-en="6">Configuración guardada</div></div>
       </figure>
     </div>
   </div>
@@ -446,8 +505,7 @@
       <div class="alternar aparecer">
         <figure class="navegador">
           <div class="navegador__barra"><i></i><i></i><i></i><span>Configuración</span></div>
-          <img src="capturas/admin-config-legajos.webp" width="1600" height="1000" loading="lazy" alt="Configuración de los campos del legajo y de los campos personalizados" data-vista="legajo" />
-          <img src="capturas/admin-config-emails.webp" width="1600" height="1000" loading="lazy" alt="Edición de una plantilla de mail con sus variables, asunto, cuerpo y texto del botón" data-vista="mails" hidden />
+          <div class="ui" data-escena data-vista="legajo" role="img" aria-label="Configuración de los campos del legajo: se marca un campo como obligatorio y se suma un campo propio"><div class="ui-lado"><b>Scuadra</b><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="act"></i></div><div class="ui-cuerpo"><div class="ui-tit"><div><h4>Campos del legajo</h4><small>Qué se ve y qué es obligatorio</small></div><span class="ui-btn toque" data-en="3">+ Campo propio</span></div><div class="ui-caja"><div class="ui-tabla"><div class="ui-fila ui-fila--cab" style="--cols:2fr auto auto"><span>Campo</span><span>Visible</span><span>Obligatorio</span></div><div class="ui-fila" style="--cols:2fr auto auto"><span>CUIL</span><span class="interruptor interruptor--on"></span><span class="interruptor interruptor--on"></span></div><div class="ui-fila" style="--cols:2fr auto auto"><span>Fecha de ingreso</span><span class="interruptor interruptor--on"></span><span class="interruptor interruptor--on"></span></div><div class="ui-fila" style="--cols:2fr auto auto"><span>Obra social</span><span class="interruptor interruptor--on"></span><span class="interruptor" data-en="2"></span></div><div class="ui-fila" style="--cols:2fr auto auto"><span>Contacto de emergencia</span><span class="interruptor interruptor--on"></span><span class="interruptor"></span></div><div class="ui-fila aparece" data-en="3" style="--cols:2fr auto auto"><span>Talle de uniforme <span class="pill pill--azul">Nuevo</span></span><span class="interruptor interruptor--on"></span><span class="interruptor"></span></div></div></div></div><div class="ui-aviso aparece" data-en="4">Campos guardados</div></div><div class="ui" data-escena data-vista="mails" hidden role="img" aria-label="Edición de una plantilla de mail: se escribe el asunto con variables y se ve la vista previa"><div class="ui-lado"><b>Scuadra</b><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="act"></i></div><div class="ui-cuerpo"><div class="ui-tit"><div><h4>Recibo disponible</h4><small>Plantilla de mail · se envía al publicar un lote</small></div><span class="interruptor interruptor--on"></span></div><div class="ui-dos"><div class="ui-caja"><h5>Asunto</h5><small><span class="escribe" data-en="1">Tu recibo de {{periodo}} ya está disponible</span></small><h5 style="margin-top:.8em">Variables</h5><div style="display:flex;flex-wrap:wrap;gap:.35em"><span class="pill pill--gris toque" data-en="1">{{nombre}}</span><span class="pill pill--gris">{{periodo}}</span><span class="pill pill--gris">{{vencimiento}}</span></div><h5 style="margin-top:.8em">Texto del botón</h5><small><span class="escribe" data-en="3">Firmar mi recibo</span></small></div><div class="ui-caja"><h5>Vista previa</h5><small>Hola, Juan:</small><p style="margin:.4em 0;font-size:.9em" class="aparece" data-en="2">Tu recibo de <b>Octubre 2026</b> ya está disponible. Firmalo antes del 10/11.</p><span class="ui-btn aparece" data-en="4">Firmar mi recibo</span></div></div></div><div class="ui-aviso aparece" data-en="5">Plantilla guardada</div></div>
         </figure>
         <div class="alternar__botones" role="group" aria-label="Ver configuración de">
           <button type="button" aria-pressed="true" data-vista="legajo">Campos del legajo</button>
