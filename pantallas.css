@@ -172,8 +172,3 @@
 
 /* El celular del asistente ya no tiene una imagen que le dé ancho. */
 .asistente .tel { width: 100%; }
-
-/* Llamada a la demo debajo de los módulos */
-.cta-demo { display: flex; align-items: center; justify-content: space-between; gap: 16px 32px; flex-wrap: wrap; margin-top: 40px; padding: 24px 28px; border-radius: var(--radio); background: var(--verde-suave); }
-.cta-demo p { color: var(--tinta-2); max-width: 40em; }
-.cta-demo b { color: var(--tinta); }
