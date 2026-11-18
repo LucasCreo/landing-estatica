@@ -185,7 +185,8 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 .tildes .ic { color: var(--acento); margin-top: 4px; }
 
 /* Módulos */
-.pestanas { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; margin-bottom: 40px; }
+.pestanas { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px; max-width: 900px; margin: 0 auto 40px; }
+.pestanas button { justify-content: center; }
 .pestanas button {
   display: inline-flex; align-items: center; gap: 8px; padding: 10px 18px; border-radius: 999px; font-size: 15px; font-weight: 500;
   border: 1px solid var(--borde); background: var(--superficie); color: var(--tinta-2); transition: all .2s;
@@ -359,6 +360,7 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 @media (max-width: 1024px) {
   .hero__grilla, .destacado, .modulo { grid-template-columns: 1fr; gap: 40px; }
   .hero { padding-top: 48px; }
+  .pestanas button { padding: 9px 10px; gap: 6px; font-size: 14px; }
   .hero__texto { text-align: center; }
   .hero__bajada { margin-inline: auto; }
   .hero__ctas, .hero__garantias { justify-content: center; }
@@ -401,7 +403,7 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
   .chip--a { left: 4px; top: 6%; }
   .chip--b { left: 4px; }
   .celular--hero { width: 34%; right: 0; }
-  .pestanas { justify-content: flex-start; flex-wrap: nowrap; overflow-x: auto; margin-inline: -20px; padding: 0 20px 4px; }
+  .pestanas { display: flex; justify-content: flex-start; flex-wrap: nowrap; overflow-x: auto; max-width: none; margin: 0 -20px 40px; padding: 0 20px 4px; }
   .pestanas button { flex: none; }
   .celulares { grid-template-columns: repeat(4, 72%); }
   .celulares .tel:nth-child(even) { margin-top: 0; }
